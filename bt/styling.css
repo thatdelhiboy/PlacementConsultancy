@@ -1,0 +1,13 @@
+.privacy
+{
+	text-decoration: none;
+	color: rgb(1,138,26);
+	font-size: 20px;
+}
+.shift
+{
+	padding-left: 100px;
+}
+.privacy a:hover{
+	color:rgb(138,23,1);
+}
