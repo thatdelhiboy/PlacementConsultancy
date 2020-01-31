@@ -1,5 +1,5 @@
 <?php
-class Login_initial extends CI_Controller {
+class Login_seeker extends CI_Controller {
 
         public function index()
         {
@@ -17,7 +17,7 @@ class Login_initial extends CI_Controller {
 						$password=sha1($this->input->post('Password'));
 						$email=$this->input->post('Email');
 						$this->load->model('Queries');
-						$usrdata=$this->Queries->email_check($email,$password);
+						$usrdata=$this->Queries->email_check_seeker($email,$password);
 						if ($usrdata){
 						/*$this->session->set_userdata('First_Name',$usrdata['usr'][0]['First_Name']);
 						$this->session->set_userdata('Last_Name',$usrdata['usr'][0]['Last_Name']);
@@ -29,14 +29,15 @@ class Login_initial extends CI_Controller {
 						'Last_Name'=> $usrdata->Last_Name,
 						'Username'=>$usrdata->Username,
 						'Email'=>$usrdata->Email,
-						'Age'=>$usrdata->Age
+						'Gender'=>$usrdata->Gender,
+						 'Date'=>$usrdata->Date
 						];
 						$this->session->set_userdata($sessionData);
-						return redirect('Welcome/dashboard');
+						return redirect('Welcome/dashboard_seeker');
 						}
 						else{
 							$this->session->set_flashdata('message','email or password is incorrect');
-							return redirect('Welcome/employerLogin');
+							return redirect('Welcome/seekerLogin');
 						}
 						//$this->load->model(queries);
 						/*if($this->queries->registerAdmin($data))
@@ -49,7 +50,7 @@ class Login_initial extends CI_Controller {
                 }
 		}
 		public function user_profile(){
-			$this->load->view('user_profile.php');
+			$this->load->view('user_profile2.php');
 		}
 		public function user_logout(){
 			$this->session->sess_destroy();

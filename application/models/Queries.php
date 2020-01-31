@@ -24,6 +24,14 @@ class Queries extends CI_Model{
 			return $query->row();
 		}
 	}
+	public function email_check_seeker($email,$password)
+	{$query=$this->db->select('*')->where(['Email'=>$email,'Password'=>$password])
+		->get('seeker');
+		if($query->num_rows()>0){
+			return $query->row();
+		}
+		
+	}
 	public function registerSeeker($data){
 		$this->db->set($data);
 		return $this->db->insert('seeker',$data);

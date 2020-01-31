@@ -1,5 +1,6 @@
 <div class="container">
 <?php echo form_open("Seeksignup",['class'=>'form-horizontal']);?>
+<?php echo form_hidden("registration date",date('d-m-Y'));?>
 	<h3>Job Seeker register</h3>
 	<hr>
 
@@ -8,58 +9,58 @@
 			<div class="form-group">
 				<label class="col-md-3 control-label">First Name</label>
 				<div class="col-md-9">
-					<?php echo form_input(['name'=>'firstname' ,'class'=>'form-control' ,'placeholder'=>'First Name']);?>
+					<?php echo form_input(['name'=>'First_Name' ,'class'=>'form-control' ,'placeholder'=>'First Name']);?>
 				</div>
 				
 			</div>
 		
 	</div>
-	<div class='col-md-6'><?php echo form_error('username','<div class="text-danger">','</div>')?></div>
+	<div class='col-md-6'><?php echo form_error('First_Name','<div class="text-danger">','</div>');?></div>
 </div>
 <div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 col-form-label">Last Name</label>
 				<div class="col-md-9">
-					<?php echo form_input(['name'=>'lastname' ,'class'=>'form-control' ,'placeholder'=>'Last Name']);?>
+					<?php echo form_input(['name'=>'Last_Name' ,'class'=>'form-control' ,'placeholder'=>'Last Name']);?>
 				</div>
 				
 			</div>
 		
 	</div>
-	<div class='col-md-6'><?php echo form_error('lastname','<div class="text-danger">','</div>')?></div>
+	<div class='col-md-6'><?php echo form_error('Last_Name','<div class="text-danger">','</div>');?></div>
 </div>
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 col-form-label">Username</label>
 				<div class="col-md-9">
-					<?php echo form_input(['name'=>'username' ,'class'=>'form-control' ,'placeholder'=>'Username']);?>
+					<?php echo form_input(['name'=>'Username' ,'class'=>'form-control' ,'placeholder'=>'Username']);?>
 				</div>
 				
 			</div>
 			</div>
-			<div class='col-md-6'><?php echo form_error('username','<div class="text-danger">','</div>')?></div>
+			<div class='col-md-6'><?php echo form_error('Username','<div class="text-danger">','</div>');?></div>
 		</div>
 		<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 col-form-label">Email</label>
 				<div class="col-md-9">
-					<?php echo form_input(['name'=>'email' ,'class'=>'form-control' ,'placeholder'=>'Email']);?>
+					<?php echo form_input(['name'=>'Email' ,'class'=>'form-control' ,'placeholder'=>'Email']);?>
 				</div>
 				
 			</div>
 		
 	</div>
-	<div class='col-md-6'><?php echo form_error('email','<div class="text-danger">','</div>')?></div>
+	<div class='col-md-6'><?php echo form_error('Email','<div class="text-danger">','</div>');?></div>
 </div>
 
 		<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 col-form-label">Gender</label>
-				<select class="col-md-9" name="gender">
+				<select class="col-md-9 form-control" name="Gender">
 					<option value="">Select</option>
 					<option value="male">Male</option>
 					<option value="female">Female</option>
@@ -69,33 +70,33 @@
 			</div>
 		
 	</div>
-	<div class='col-md-6'><?php echo form_error('gender','<div class="text-danger">','</div>')?></div>
+	<div class='col-md-6'><?php echo form_error('Gender','<div class="text-danger">','</div>');?></div>
 </div>
 <div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 col-form-label">Password</label>
 				<div class="col-md-9">
-					<?php echo form_password(['name'=>'password' ,'class'=>'form-control' ,'placeholder'=>'Password']);?>
+					<?php echo form_password(['name'=>'Password' ,'class'=>'form-control' ,'placeholder'=>'Password']);?>
 				</div>
 				
 			</div>
 		
 	</div>
-	<div class='col-md-6'><?php echo form_error('password','<div class="text-danger">','</div>')?></div>
+	<div class='col-md-6'><?php echo form_error('Password','<div class="text-danger">','</div>');?></div>
 </div>
 <div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 col-form-label">Confirm Password</label>
 				<div class="col-md-9">
-					<?php echo form_password(['name'=>'confirmpassword' ,'class'=>'form-control' ,'placeholder'=>'Confirm Password']);?>
+					<?php echo form_password(['name'=>'Password_Confirmation' ,'class'=>'form-control' ,'placeholder'=>'Confirm Password']);?>
 				</div>
 				
 			</div>
 		
 	</div>
-	<div class='col-md-6'><?php echo form_error('confirmpassword','<div class="text-danger">','</div>')?></div>
+	<div class='col-md-6'><?php echo form_error('Password_Confirmation','<div class="text-danger">','</div>');?></div>
 </div>
 <button type="submit" class="btn btn-primary">REGISTER</button>
 <?php echo anchor("welcome","Back",['class'=>'btn btn-primary']);?>

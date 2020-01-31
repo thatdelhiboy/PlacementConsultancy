@@ -5,7 +5,7 @@ $usrname=$this->session->userdata('Username');
 ?>
 <div class="container">
 
-	<h3>Employer Dashboard</h3>
+	<h3>Seeker Dashboard</h3>
 	<div class="row">
 		<div class="col-md-4 ">
 			<table class="table table-bordered table-striped">
@@ -32,12 +32,16 @@ $usrname=$this->session->userdata('Username');
 				</tr>
 				<tr>
 					<td>Age</td>
-					<td><?php echo $this->session->userdata['Age'];?></td>
+					<td><?php echo $this->session->userdata['Gender'];?></td>
+				</tr>
+				<tr>
+					<td>Registered by</td>
+					<td><?php echo $this->session->userdata['Date'];?></td>
 				</tr>
 				<tr> <td style="padding-top: 20px;"></td></tr>
 				
 			</table>
 		</div>
 	</div>
-	<a href="<?php echo base_url('Login_initial/user_logout');?>" class="btn btn-warning">Log Out</a>
+	<a href="<?php echo base_url('Login_seeker/user_logout');?>" class="btn btn-warning">Log Out</a>
 </div>

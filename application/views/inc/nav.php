@@ -4,9 +4,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav text-center mx-auto">
+    <ul class="navbar-nav text-center mr-auto">
       <li class="nav-item ">
         <?php echo anchor("welcome","Home",['class'=>'nav-link']);?>
+      </li>
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign in
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <?php echo anchor("welcome/employerLogin","Employer",['class'=>' dropdown-item']);?>
+         <?php echo anchor("welcome/seekerLogin","Seeker",['class'=>' dropdown-item']);?>
+        </div>
       </li>
 	  <!--
       <li class="nav-item">
@@ -15,17 +24,8 @@
       <li class="nav-item">
         <?php echo anchor("welcome/seekRegister","Seeker",['class'=>'nav-link']);?>
       </li> -->
-     <div class="dropdown">
-  <button class="btn btn-secondary btn-sm dropdown-toggle margin-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Login
-  </button>
-  
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <?php echo anchor("welcome/employerLogin","Employer",['class'=>' dropdown-item']);?>
-    <?php echo anchor("welcome/seekLogin","Seeker",['class'=>' dropdown-item']);?>
-   <!-- <a class="dropdown-item" href="#">Something else here</a>-->
-  </div>
-</div> 
+     
+    </li>
       
     </ul>
   </div>

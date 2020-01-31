@@ -47,11 +47,25 @@ class Welcome extends CI_Controller {
 		$this->load->view('inc/footer');
 		
 	}
+	public function seekerLogin()
+	{$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('Login_seek');
+		$this->load->view('inc/footer');
+		
+	}
 	public function dashboard()
 	{
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile');
+		$this->load->view('inc/footer');
+	}
+	public function dashboard_seeker()
+	{
+		$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('user_profile2');
 		$this->load->view('inc/footer');
 	}
 

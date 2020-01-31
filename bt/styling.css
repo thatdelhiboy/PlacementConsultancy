@@ -6,8 +6,9 @@
 }
 .shift
 {
-	padding-left: 100px;
+	padding-left: 200px;
 }
-.privacy a:hover{
+a.privacy:hover{
 	color:rgb(138,23,1);
+	font-size: 22px;
 }
