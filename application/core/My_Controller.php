@@ -1,5 +1,7 @@
 <?php
-class MY_Controller extends CI_Controller{
-	
+class MY_Controller extends MX_Controller{
+		function __construct(){
+		parent::__construct();	
+		}
 }
 ?>

@@ -1,0 +1,69 @@
+.privacy
+{
+	text-decoration: none;
+	color: rgb(1,138,26);
+	font-size: 20px;
+}
+.shift
+{
+	padding-left: 200px;
+}
+.shift-vertical-align{
+	position: relative;
+	top: 200px;
+}
+a.privacy:hover{
+	color:rgba(138,23,1,35);
+	font-size: 22px;
+	text-decoration:none;
+	
+}
+.jumbotron
+{
+	background: rgba(2,117,216,0.05);
+	padding-top: 30px;
+	
+}
+body{
+	background-image: url("C:\xampp\htdocs\placementConsultancy\bt\images\bgimage.jpeg");
+	background-size: cover;
+}
+.btn-group{
+	width:220px;
+}
+.block{
+	width:300px;
+	height: 200px;
+}
+.wrapper{
+	display: flex;
+	position: relative;
+}
+.wrapper .sidebar{
+	
+	width: 250px;
+	height:100%;
+	background: #4b4276;
+	padding: 30px 0;
+}
+.wrapper .sidebar ul li{
+	padding: 15px;
+	list-style-type: none;
+	border-bottom: 1px solid rgba(0,0,0,0.5);
+	border-top: 1px solid rgba(255,255,255,0.5);
+	
+}
+.wrapper .sidebar ul li a{
+	color: #bdb8d7;
+	display: block;
+}
+.wrapper .sidebar ul li:hover{
+	background: #594f8d;
+}
+.wrapper .sidebar ul li:hover a{
+	color: #fff;
+}
+.wrapper .sidebar ul li a:hover{
+	text-decoration: none;
+	font-size: 13px;
+}

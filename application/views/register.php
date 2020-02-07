@@ -15,7 +15,7 @@
 		
 	</div>
 			<div class="col-md-6">
-			<?php echo form_error('firstname','<div class="text-danger">','</div>');?>
+			<?php echo form_error('First_Name','<div class="text-danger">','</div>');?>
 			</div>
 </div>
 <div class="row">
@@ -30,7 +30,7 @@
 		
 	</div>
 			<div class="col-md-6">
-			<?php echo form_error('lastname','<div class="text-danger">','</div>')?>
+			<?php echo form_error('Last_Name','<div class="text-danger">','</div>');?>
 			</div>
 </div>
 	<div class="row">
@@ -45,7 +45,7 @@
 			
 			</div>
 			<div class="col-md-6">
-			<?php echo form_error('username','<div class="text-danger">','</div>')?>
+			<?php echo form_error('Username','<div class="text-danger">','</div>');?>
 			</div>
 		</div>
 		<div class="row">
@@ -60,7 +60,7 @@
 		
 	</div>
 			<div class="col-md-6">
-			<?php echo form_error('email','<div class="text-danger">','</div>')?>
+			<?php echo form_error('Email','<div class="text-danger">','</div>');?>
 			</div>
 </div>
 <div class="row">
@@ -75,7 +75,7 @@
 		
 	</div>
 			<div class="col-md-6">
-			<?php echo form_error('email','<div class="text-danger">','</div>')?>
+			<?php echo form_error('Age','<div class="text-danger">','</div>');?>
 			</div>
 </div>
 <div class="row">
@@ -90,7 +90,7 @@
 		
 	</div>
 			<div class="col-md-6">
-			<?php echo form_error('password','<div class="text-danger">','</div>')?>
+			<?php echo form_error('Password','<div class="text-danger">','</div>');?>
 			</div>
 </div>
 <div class="row">
@@ -105,7 +105,7 @@
 		
 	</div>
 			<div class="col-md-6">
-			<?php echo form_error('confirmpassword','<div class="text-danger">','</div>')?>
+			<?php echo form_error('Password_Confirmation','<div class="text-danger">','</div>');?>
 			</div>
 </div>
 <button type="submit" class="btn btn-primary">REGISTER</button>

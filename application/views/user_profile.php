@@ -1,43 +1,25 @@
 <?php
 $usrname=$this->session->userdata('Username');
-
-
 ?>
 <div class="container">
 
 	<h3>Employer Dashboard</h3>
+	<hr>
 	<div class="row">
-		<div class="col-md-4 ">
-			<table class="table table-bordered table-striped">
+		<div class="col-md-3 ">
+		
+		<div class="wrapper">
+			<div class="sidebar">
+				<ul>
+					<li><img src="<?php echo base_url('bt/images/userr.png')?>" alt="..." class="img-thumbnail"/></li>
+					<li><?php echo anchor("welcome/postjob","Post Job");?></li>
+					<li><?php echo anchor("Jobview","View Job");?></li>
+					<li><?php echo anchor("welcome/Dashboard","Set Job");?></li>
+					<li><?php echo anchor("welcome/Dashboard","Profile");?></li>
+					<li><a href="<?php echo base_url('Login_seeker/user_logout');?>" class="btn btn-warning">Log Out</a></li>
+				</ul>
 			
-				<tr>
-					<th colspan="2"><h4 class="text-center">Your Details</h4></th>
-				</tr>
-				
-				<tr>
-					<td>First Name</td>
-					<td><?php echo $this->session->userdata['First_Name'];?></td>
-				</tr>
-				<tr>
-					<td>Last Name</td>
-					<td><?php echo $this->session->userdata['Last_Name'];?></td>
-				</tr>
-				<tr>
-					<td>User Name</td>
-					<td><?php echo $this->session->userdata['Username'];?></td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td><?php echo $this->session->userdata['Email'];?></td>
-				</tr>
-				<tr>
-					<td>Age</td>
-					<td><?php echo $this->session->userdata['Age'];?></td>
-				</tr>
-				<tr> <td style="padding-top: 20px;"></td></tr>
-				
-			</table>
+			</div>
 		</div>
-	</div>
-	<a href="<?php echo base_url('Login_initial/user_logout');?>" class="btn btn-warning">Log Out</a>
 </div>
+	

@@ -1,6 +1,6 @@
 <?php
 
-class Emplval extends CI_Controller {
+class Emplval extends MX_Controller {
 
         public function index()
         {
@@ -17,11 +17,15 @@ class Emplval extends CI_Controller {
                         array('required' => 'You must provide a %s.')
                 );
                 $this->form_validation->set_rules('Password_Confirmation', 'Password Confirmation', 'required');
-                
+					$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
                 if ($this->form_validation->run() == FALSE)
                 {
-                       		echo validation_errors();
+                       		//echo validation_errors();
+							$this->load->view('inc/header');
+						$this->load->view('inc/nav');
+						$this->load->view('register');
+						$this->load->view("/inc/footer");
                 }
                 else
                 {

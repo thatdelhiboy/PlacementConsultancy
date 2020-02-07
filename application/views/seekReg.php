@@ -55,6 +55,19 @@
 	</div>
 	<div class='col-md-6'><?php echo form_error('Email','<div class="text-danger">','</div>');?></div>
 </div>
+<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="col-md-3 col-form-label">Mobile</label>
+				<div class="col-md-9">
+					<?php echo form_password(['name'=>'Mobile' ,'class'=>'form-control' ,'placeholder'=>'Mobile']);?>
+				</div>
+				
+			</div>
+		
+	</div>
+	<div class='col-md-6'><?php echo form_error('Password','<div class="text-danger">','</div>');?></div>
+</div>
 
 		<div class="row">
 		<div class="col-md-6">

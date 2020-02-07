@@ -12,7 +12,7 @@
 </footer>
 
 
-<script type="text/javascript" src="<?php echo base_url('bt/bootstrap.min.js');?>" language="javascript"></script>
+<script type="text/javascript" src="<?php echo base_url('bt/js/bootstrap.min.js');?>" language="javascript"></script>
     
 </body>
 </html>

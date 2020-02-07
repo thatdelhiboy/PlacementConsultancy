@@ -1,15 +1,20 @@
 <?php
-class Login_initial extends CI_Controller {
+class Login_initial extends MX_Controller {
 
         public function index()
         {
 				$this->load->library('form_validation');
                 $this->form_validation->set_rules('Email', 'Email', 'required|valid_email');
 				$this->form_validation->set_rules('Password', 'Password', 'required');
+				$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 				if ($this->form_validation->run() == FALSE)
                 {
                   // $this->load->view('Welcome/employerLogin');    
-				  echo validation_errors();
+				  //echo validation_errors();
+				  $this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('Login');
+		$this->load->view('inc/footer');
                 }
                 else
                 {
