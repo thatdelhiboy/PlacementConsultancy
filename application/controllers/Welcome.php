@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends MX_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -59,6 +59,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile');
+		$this->load->view('sidebar1');
 		$this->load->view('inc/footer');
 	}
 	public function dashboard_seeker()
@@ -66,8 +67,53 @@ class Welcome extends CI_Controller {
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile2');
+		$this->load->view('sidebar2');
 		$this->load->view('inc/footer');
 	}
-
+	public function Contact()
+	{
+		$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('contactus');
+		$this->load->view('inc/footer');
+	}
+	public function postjob()
+	{
+		$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('user_profile');
+		$this->load->view('postjob');
+		$this->load->view('inc/footer');
+	}
+	public function editjob($id){
+		$this->load->model('Queries');
+		$jobs=$this->Queries->getjob($id);
+		$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('Editjob',['jobs'=>$jobs]);
+		$this->load->view('inc/footer');
+	}
+	public function modifyjob($id){
+		$data= array('Title'=>$this->input->post('Title'),
+		'Skill'=>$this->input->post('Skill'),
+		'City'=>$this->input->post('City'),
+		'Salary'=>$this->input->post('Salary'));
+		$this->load->model('Queries');
+		if($this->Queries->updateJob($data,$id)){
+			$this->session->set_flashdata('message','Job Updated Successfully');
+		}
+		return redirect("Welcome/editjob/{$id}");
+		
+	}
+	public function deleteJob($id){
+		$this->load->model('Queries');
+		if($this->Queries->removeJob($id)){
+			return redirect("Welcome/dashboard");
+		}
+	}
+	public function seekerprog(){
+		
+	}
+	
 	
 }
