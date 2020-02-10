@@ -20,7 +20,6 @@ $usrname=$this->session->userdata('Username');
 					<li><?php echo anchor("welcome/seekerprog","Profile");?></li>
 					<li><a href="<?php echo base_url('Login_seeker/user_logout');?>" class="btn btn-warning">Log Out</a></li>
 				</ul>
-			
 			</div>
 		</div>
 </div>

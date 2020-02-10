@@ -11,10 +11,10 @@ class Login_seeker extends MX_Controller {
                 {
                   // $this->load->view('Welcome/employerLogin');    
 				 // echo validation_errors();
-				 $this->load->view('inc/header');
-		$this->load->view('inc/nav');
-		$this->load->view('Login_seek');
-		$this->load->view('inc/footer');
+				$this->load->view('inc/header');
+				$this->load->view('inc/nav');
+				$this->load->view('Login_seek');
+				$this->load->view('inc/footer');
 	
                 }
                 else
@@ -62,8 +62,4 @@ class Login_seeker extends MX_Controller {
 			$this->session->sess_destroy();
 			redirect('Welcome','refresh');
 		}
-		
-}
-
-
 ?>
