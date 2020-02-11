@@ -77,6 +77,10 @@ class Welcome extends MX_Controller {
 		$this->load->view('contactus');
 		$this->load->view('inc/footer');
 	}
+	public function Privacy(){
+		$this->load->view('inc/header');
+		$this->load->view('privacy');
+	}
 	public function postjob()
 	{
 		$this->load->view('inc/header');
@@ -111,8 +115,21 @@ class Welcome extends MX_Controller {
 			return redirect("Welcome/dashboard");
 		}
 	}
-	public function seekerprog(){
-		
+	public function seekerprog($mobile){
+		$this->load->model('Queries');
+		$pro=$this->Queries->getqual($mobile);
+		$this->load->view('inc/header');
+		$this->load-view('inc/nav');
+		$this->load->view('user_profile2');
+		$this->load->view('seekerprog',['pro'=>$pro]);
+		$this->load->view('inc/footer');
+	}
+	public function seekprog(){
+		$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('user_profile2');
+		$this->load->view('seekerprog');
+		$this->load->view('inc/footer');
 	}
 	
 	

@@ -18,7 +18,7 @@
 	<?php 
 	 } ?>
 	 <div class="panel-body">
-	<?php echo form_open("Login_seeker",['class'=>'form-horizontal']);?>
+	<?php echo form_open("Login_initial",['class'=>'form-horizontal']);?>
 	<hr>
 	<div class="row">
 	<div class="col-md-6">
@@ -29,7 +29,9 @@
 				</div>
 	</div>
 	</div>
-	
+	<div class="col-md-6">
+	<?php echo form_error('Email','<div class="text-danger">','</div>');?>
+	</div>
 	</div>
 	<div class="row">
 	<div class="col-md-6">
@@ -40,7 +42,9 @@
 				</div>
 	</div>
 	</div>
-	
+	<div class="col-md-6">
+	<?php echo form_error('Password','<div class="text-danger">','</div>');?>
+	</div>
 	</div>
 	<button type="submit" class="btn btn-info">Login</button>
 <?php echo anchor("welcome","Back",['class'=>'btn btn-info']);?>

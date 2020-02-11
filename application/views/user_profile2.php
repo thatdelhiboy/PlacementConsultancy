@@ -17,9 +17,10 @@ $usrname=$this->session->userdata('Username');
 					<li><?php echo anchor("welcome/viewjob","View Jobs");?></li>
 					<li><?php echo anchor("Jobview","Interested Jobs");?></li>
 					<li><?php echo anchor("welcome/message","Messages");?></li>
-					<li><?php echo anchor("welcome/seekerprog","Profile");?></li>
-					<li class="btn btn-warning"><?php echo anchor("Login_seeker/user_logout", "Log Out");?></li>
+					<li><?php echo anchor("welcome/seekprog","Profile");?></li>
+					<li><a href="<?php echo base_url('Login_seeker/user_logout');?>" class="btn btn-warning">Log Out</a></li>
 				</ul>
+			
 			</div>
 		</div>
 </div>

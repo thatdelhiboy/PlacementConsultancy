@@ -6,8 +6,8 @@
 
 <div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
-				<label class="col-md-3 control-label">First Name</label>
+			<div class="form-group row">
+				<label class="col-md-3 col-form-label">First Name</label>
 				<div class="col-md-9">
 					<?php echo form_input(['name'=>'First_Name' ,'class'=>'form-control' ,'placeholder'=>'First Name']);?>
 				</div>
@@ -19,7 +19,7 @@
 </div>
 <div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Last Name</label>
 				<div class="col-md-9">
 					<?php echo form_input(['name'=>'Last_Name' ,'class'=>'form-control' ,'placeholder'=>'Last Name']);?>
@@ -32,7 +32,7 @@
 </div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Username</label>
 				<div class="col-md-9">
 					<?php echo form_input(['name'=>'Username' ,'class'=>'form-control' ,'placeholder'=>'Username']);?>
@@ -44,7 +44,7 @@
 		</div>
 		<div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Email</label>
 				<div class="col-md-9">
 					<?php echo form_input(['name'=>'Email' ,'class'=>'form-control' ,'placeholder'=>'Email']);?>
@@ -57,10 +57,10 @@
 </div>
 <div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Mobile</label>
 				<div class="col-md-9">
-					<?php echo form_password(['name'=>'Mobile' ,'class'=>'form-control' ,'placeholder'=>'Mobile']);?>
+					<?php echo form_input(['name'=>'Mobile' ,'class'=>'form-control' ,'placeholder'=>'Mobile']);?>
 				</div>
 				
 			</div>
@@ -71,7 +71,7 @@
 
 		<div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Gender</label>
 				<select class="col-md-9 form-control" name="Gender">
 					<option value="">Select</option>
@@ -87,7 +87,7 @@
 </div>
 <div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Password</label>
 				<div class="col-md-9">
 					<?php echo form_password(['name'=>'Password' ,'class'=>'form-control' ,'placeholder'=>'Password']);?>
@@ -100,7 +100,7 @@
 </div>
 <div class="row">
 		<div class="col-md-6">
-			<div class="form-group">
+			<div class="form-group row">
 				<label class="col-md-3 col-form-label">Confirm Password</label>
 				<div class="col-md-9">
 					<?php echo form_password(['name'=>'Password_Confirmation' ,'class'=>'form-control' ,'placeholder'=>'Confirm Password']);?>
