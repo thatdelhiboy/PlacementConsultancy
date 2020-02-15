@@ -40,6 +40,15 @@
             </li>
             <?php } ?>
 
+            <?php if($this->session->userdata('Email')&& ($this->session->userdata('role_id')==2)){?>
+<li class="nav-item ">
+<?php echo anchor("welcome/Dashboard","Dashboard",['class'=>'nav-link active']);?>
+</li>
+<?php } elseif($this->session->userdata('Email') && ($this->session->userdata('role_id')==1)){?>
+<?php echo anchor("welcome/dashboard_seeker","Dashboard",['class'=>'nav-link active']);?>
+
+<?php }?>
+
         </ul>
     </div>
 </nav>
@@ -129,13 +138,6 @@
 <!-- nav by abhishk/ -->
 
 <!-- test query -->
-<?php if($this->session->userdata('Email')&& ($this->session->userdata('role_id')==2)){?>
-<?php echo anchor("welcome/Dashboard","Dashboard",['class'=>'btn btn-light']);
- ?>
-<?php } elseif($this->session->userdata('Email') && ($this->session->userdata('role_id')==1)){?>
-<?php echo anchor("welcome/dashboard_seeker","Dashboard",['class'=>'btn btn-light']);?>
-<?php } else {?>
-<?php echo anchor("welcome/emplRegister","EMPLOYER REGISTER",['class'=>'btn btn-light']);?>
-<?php echo anchor("welcome/seekRegister","SEEKER REGISTER",['class'=>'btn btn-light']);?>
-<?php }?>
+
 <!-- test query -->
+<div class="row">
