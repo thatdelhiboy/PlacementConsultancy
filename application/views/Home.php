@@ -1,32 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<div class="container-fluid">
-<div class="jumbotron jumbotron-fluid bg-info">
-  
-   <h3 class="mr-auto bg-light">We Hire</h3>
-   <!-- <h3 class="display-4">Registration</h3> -->
-    
-    <div class="row">
-		<?php if($this->session->userdata('Email')&&$this->session->userdata('Age')){?>
-		<div class="col-sm-4 col-lg-4 shift ">
-    		<?php echo anchor("welcome/Dashboard","EMPLOYER Dashboard",['class'=>'btn btn-light']);?>
-    	</div>
-		<?php } else {?>
-    	<div class="col-sm-4 col-lg-4 shift ">
-    		<?php echo anchor("welcome/emplRegister","EMPLOYER REGISTER",['class'=>'btn btn-light']);?>
-    	</div>
-		<?php }?>
-		<div class="col-lg-4"></div>
-		<?php if($this->session->userdata('Email')&&$this->session->userdata('Gender')){?>
-    	<div class="col-sm-4 col-lg-4 ">
-    		<?php echo anchor("welcome/dashboard_seeker","SEEKER Dashboard",['class'=>'btn btn-light']);?>
-    	</div>
-		<?php } else {?>
-		<div class="col-sm-4 col-lg-4 ">
-    		<?php echo anchor("welcome/seekRegister","SEEKER REGISTER",['class'=>'btn btn-light']);?>
-    	</div>
-		<?php } ?>
-    </div>
-  </div>
+<!-- homepage serch menu and button  -->
+<div class="searchbar">
+
+	<div class="input-group mb-3">
+		<input type="text" name="jobtitle" id="jobtitle" placeholder="Job Title" class="form-control searchboxhome"
+			aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+	<div class="input-group mb-3">
+		<input type="text" name="joblocation" id="joblocation" placeholder="Job location"
+			class="searchboxhome form-control searchboxhome" aria-label="Sizing example input"
+			aria-describedby="inputGroup-sizing-default">
+	</div>
 </div>
+<button type="submit" class="btn btn-lg btn-success">Search Job</button>
+<!-- homepage serch menu and button ends here -->

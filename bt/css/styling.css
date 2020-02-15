@@ -1,3 +1,4 @@
+/* style by Haushila */
 .privacy
 {
 	text-decoration: none;
@@ -25,8 +26,9 @@ a.privacy:hover{
 	
 }
 body{
-	background-image: url("C:\xampp\htdocs\placementConsultancy\bt\images\bgimage.jpeg");
-	background-size: cover;
+  background: #4568DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .btn-group{
 	width:220px;
@@ -65,5 +67,106 @@ body{
 }
 .wrapper .sidebar ul li a:hover{
 	text-decoration: none;
-	font-size: 13px;
+}
+
+
+/* style by Abhishek singh */
+
+body {
+  margin: 0;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-position-x: center;
+
+}
+.searchbar{
+  display: flex;
+}
+
+#jobtitle{
+  margin-right: 1%;
+  margin-left: 10%;
+}
+#joblocation{
+  margin-left: 1%;
+  margin-right: 10%;
+}
+
+.searchbar>input[type=text]{
+  width: 30rem;
+  height: 50px;
+}
+
+button.btn-lg.btn-success{
+  display: block;
+  margin: 0 auto;
+}
+.searchboxhome{
+  margin: 30%  auto 1%;
+  width: 30%;
+  
+}
+
+.modal-login {
+  max-width: 320px;
+}
+.modal-login .modal-content {
+  border-radius: 5px;
+  border: none;
+}
+.modal-login .modal-header {
+      position: relative;
+  justify-content: center;
+      background: #f2f2f2;
+}
+  .modal-login .modal-body {
+      padding: 30px;
+  }
+  .modal-login .modal-footer {
+      background: #f2f2f2;
+  }
+.modal-login h4 {
+  text-align: center;
+  font-size: 26px;
+}
+  .modal-login label {
+      font-weight: normal;
+      font-size: 13px;
+  }
+.modal-login .form-control, .modal-login .btn {
+  min-height: 38px;
+  border-radius: 2px; 
+}
+.modal-login .hint-text {
+  text-align: center;
+}
+.modal-login .close {
+      position: absolute;
+  top: 15px;
+  right: 15px;
+}
+  .modal-login .checkbox-inline {
+      margin-top: 12px;
+  }
+  .modal-login input[type="checkbox"]{
+      margin-top: 2px;
+  }
+.modal-login .btn {
+      min-width: 100px;
+  background: #3498db;
+  border: none;
+  line-height: normal;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+  background: #248bd0;
+}
+.modal-login .hint-text a {
+  color: #999;
+}
+.trigger-btn {
+  display: inline-block;
 }

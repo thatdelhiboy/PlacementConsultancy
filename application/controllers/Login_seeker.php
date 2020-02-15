@@ -30,15 +30,17 @@ class Login_seeker extends MX_Controller {
 						$this->session->set_userdata('Username',$usrdata['usr'][0]['Username']);
 						$this->session->set_userdata('Email',$usrdata['usr'][0]['Email']);
 						$this->session->set_userdata('Age',$usrdata['usr'][0]['Age']);*/
-						$sessionData = [
-						'First_Name'=> $usrdata->First_Name,
-						'Last_Name'=> $usrdata->Last_Name,
+						$sessionData = array(
+						
 						'Username'=>$usrdata->Username,
 						'Email'=>$usrdata->Email,
-						'Gender'=>$usrdata->Gender,
 						'Mobile'=>$usrdata->Mobile,
-						 'Date'=>$usrdata->Date
-						];
+						 'role_id'=>$usrdata->role_id
+						);
+						/*echo '<pre>';
+						print_r($sessionData);
+						echo '</pre>';
+						exit();*/
 						$this->session->set_userdata($sessionData);
 						return redirect('Welcome/dashboard_seeker');
 						}

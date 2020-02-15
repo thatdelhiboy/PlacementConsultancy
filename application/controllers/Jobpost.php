@@ -14,6 +14,7 @@ class Jobpost extends MX_Controller{
 				 }
 				 else
 				 {
+					 date_default_timezone_set('Asia/Kolkata');
 					 $data =array(
 					 'Posting_time'=>mdate('%Y-%m-%d %H:%i:%s',now()),
 					 'Username_fk'=>$this->session->userdata('Username'),

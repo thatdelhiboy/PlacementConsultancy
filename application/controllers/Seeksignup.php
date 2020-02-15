@@ -20,15 +20,14 @@ class Seeksignup extends MX_Controller {
 
                 if($this->form_validation->run() == FALSE)
                 {
-                        //$this->load->library('../controllers/Welcome');
-						//$this->Welcome->seekRegister();
+    
 						$this->load->view('inc/header');
 						$this->load->view('inc/nav');
 						$this->load->view('SeekReg');
 						$this->load->view("/inc/footer");
                 }
                 else
-                {		
+                {		date_default_timezone_set('Asia/Kolkata');
                         $data =array('First_Name'=> $this->input->post('First_Name'),
 						'Last_Name'=> $this->input->post('Last_Name'),
 						'Username'=> $this->input->post('Username'),
@@ -37,6 +36,7 @@ class Seeksignup extends MX_Controller {
 						'Mobile'=>$this->input->post('Mobile'),
 						'Password'=> $this->input->post('Password'),
 						'Date'=>mdate('%Y-%m-%d',now()));
+				
 						//echo '<pre>';
 						//print_r($data);
 						//echo '</pre>';

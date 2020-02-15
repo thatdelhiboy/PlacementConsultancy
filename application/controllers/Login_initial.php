@@ -30,11 +30,9 @@ class Login_initial extends MX_Controller {
 						$this->session->set_userdata('Email',$usrdata['usr'][0]['Email']);
 						$this->session->set_userdata('Age',$usrdata['usr'][0]['Age']);*/
 						$sessionData = [
-						'First_Name'=> $usrdata->First_Name,
-						'Last_Name'=> $usrdata->Last_Name,
+						'role_id'=>$usrdata->role_id,
 						'Username'=>$usrdata->Username,
-						'Email'=>$usrdata->Email,
-						'Age'=>$usrdata->Age
+						'Email'=>$usrdata->Email
 						];
 						$this->session->set_userdata($sessionData);
 						return redirect('Welcome/dashboard');

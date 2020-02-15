@@ -59,7 +59,7 @@ class Welcome extends MX_Controller {
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile');
-		$this->load->view('sidebar1');
+	//	$this->load->view('sidebar1');
 		$this->load->view('inc/footer');
 	}
 	public function dashboard_seeker()
@@ -67,7 +67,7 @@ class Welcome extends MX_Controller {
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile2');
-		$this->load->view('sidebar2');
+	//	$this->load->view('sidebar2');
 		$this->load->view('inc/footer');
 	}
 	public function Contact()
@@ -119,18 +119,24 @@ class Welcome extends MX_Controller {
 		$this->load->model('Queries');
 		$pro=$this->Queries->getqual($mobile);
 		$this->load->view('inc/header');
-		$this->load-view('inc/nav');
+		$this->load->view('inc/nav');
 		$this->load->view('user_profile2');
 		$this->load->view('seekerprog',['pro'=>$pro]);
 		$this->load->view('inc/footer');
 	}
 	public function seekprog(){
+		$pro=null;
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile2');
-		$this->load->view('seekerprog');
+		$this->load->view('seekerprog',['pro'=>$pro]);
 		$this->load->view('inc/footer');
 	}
-	
+	public function addqualification($mobile){
+		$this->load->view('inc/header');
+		$this->load->view('inc/nav');
+		$this->load->view('addqual',['mobile'=>$mobile]);
+		$this->load->view('inc/footer');
+	}
 	
 }

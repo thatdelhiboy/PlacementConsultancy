@@ -33,13 +33,18 @@ class Emplval extends MX_Controller {
 						//echo '<pre>';
 						//print_r($data);
 						//echo '</pre>';
+						$data_rol=array('username'=>$data->Username,
+						'role_id'=>2);
 						$data['Password']=sha1($this->input->post('Password'));
 						$data['Password_Confirmation']=sha1($this->input->post('Password_Confirmation'));
 						/*echo '<pre>';
 						print_r($data);
 						echo '</pre>';*/
+						$sessionData=array('Username'=>$data->Username,
+						'Email'=>$data->Email,
+						'role_id'=>$data_rol->role_id);
 						$this->load->model('Queries');
-						if($this->Queries->registerAdmin($data))
+						if($this->Queries->registerEmpl($data,$data_rol))
 						{
 							$this->session->set_flashdata('message','Registered data successfully');
 							return redirect("welcome/emplRegister");
