@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-9">
 	<table class="table table-bordered table-sm table-striped">
 	<thead>
 	<tr>
@@ -19,7 +19,16 @@
 	<td><?php echo htmlentities($row->Skill);?></td>
 	<td><?php echo htmlentities($row->Salary);?></td>
 	<td><?php echo htmlentities($row->City);?></td>
-	<td><?php echo anchor("Viewjob_seeker/selectjob/{$row->Job_id}","Apply",['class'=>'btn btn-success']);?></td>
+	<td><?php echo anchor("Viewjob_seeker/selectjob/{$row->Job_id}","Apply",['class'=>'btn btn-success']);?><?php 
+	// $success_msg = $this->session->flashdata('');
+	 $error_msg = $this->session->flashdata('message');
+	  
+	 
+	 if($error_msg){
+	?>
+	<?php echo $error_msg;?>
+	<?php 
+	 } ?></td>
 	</tr>
 	<?php }}?>
 	</tbody>
@@ -34,9 +43,7 @@
 	 
 	 if($error_msg){
 	?>
-	<div class="alert alert-danger">
 	<?php echo $error_msg;?>
-	</div>
 	<?php 
 	 } ?>
 

@@ -29,7 +29,7 @@
 
 	</table>
 
-
+<h2>Qualification</h2>
 	<table class="table table-responsive-md table-bordered table-sm table-striped">
 		<thead>
 			<tr>
