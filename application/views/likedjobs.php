@@ -10,10 +10,10 @@
 	</div>
 	<?php 
 	 } ?>
-<div class="col-md-6">
-	<table class="table table-responsive table-bordered table-sm table-striped">
+<div class="col-md-10">
+	<table class="table-responsive-md table-bordered table-striped">
 	<thead>
-	<tr>
+	<tr style="text-align:center;">
 	<th>Job Title</th>
 	<th>Created by</th>
 	<th>Requirements</th>

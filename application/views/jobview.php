@@ -1,11 +1,11 @@
-<div class="col-md-9">
+<div class="col-md-10">
 			<table class="table-responsive-md table-bordered table-striped">
 				<thead>
 				<tr>
 					<th colspan="2"><h6 class="text-center">Your Details</h6></th>
 				</tr>
 				
-				<tr>
+				<tr style="text-align:center;">
 					<th>Job Id</th>
 					<th>Job Title</th>
 					<th>City</th>
