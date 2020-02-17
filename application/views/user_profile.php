@@ -20,7 +20,6 @@ $usrname=$this->session->userdata('Username');
 						<li><?php echo anchor("welcome/Dashboard","Profile");?></li>
 						<li><?php echo anchor("Login_seeker/user_logout","Log Out");?></li>
 					</ul>
-
 				</div>
 			</div>
 		</div>
