@@ -27,7 +27,12 @@ class Addqual extends MX_Controller{
 						$this->load->model('Queries');
 						if($this->Queries->addqual($qual_data)){
 							$this->session->set_flashdata('message','Qualification Updated successfully');
-							return redirect('Welcome/seekprog');
+							$pro=$this->Queries->getqual($this->session->userdata('Mobile'));
+							$this->load->view('inc/header');
+							$this->load->view('inc/nav');
+							$this->load->view('user_profile2');
+							$this->load->view('seekerprog',['pro'=>$pro]);
+							$this->load->view('inc/footer');
 						}
 						else{
 							$this->session->flashdata('message','Qualification update failed');

@@ -16,14 +16,10 @@
 			<td>Email</td>
 			<td><?php echo $this->session->userdata['Email'];?></td>
 		</tr>
-		<tr>
-			<td>Qualification</td>
-			<td><?php echo anchor("Welcome/seekerprog/{$this->session->userdata['Mobile']}","Qualification" ,['class'=>'btn btn-primary']);?>
-			</td>
-		</tr>
+		
 		<tr>
 			<td>Add Qualification</td>
-			<td><?php echo anchor("Welcome/addqualification/{$this->session->userdata['Mobile']}","Add Qualification",['class'=>'btn btn-primary']);?>
+			<td><?php echo anchor("Welcome/addqualification/{$this->session->userdata['Mobile']}","Add Qualification",['class'=>'badge badge-primary']);?>
 			</td>
 		</tr>
 
@@ -49,9 +45,10 @@
 				<td><?php echo htmlentities($row->percentage);?></td>
 				<td><?php echo htmlentities($row->year);?></td>
 			</tr>
+			<?php }} ?>
 		</tbody>
 	</table>
-	<?php }} ?>
+	
 </div>
 </div>
 </div>

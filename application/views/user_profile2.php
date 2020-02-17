@@ -15,7 +15,7 @@ $usrname=$this->session->userdata('Username');
 				<li><?php echo anchor("viewjob_seeker","View Jobs");?></li>
 				<li><?php echo anchor("opted_job","Liked Jobs");?></li>
 				<li><?php echo anchor("welcome/message","Messages");?></li>
-				<li><?php echo anchor("welcome/seekprog","Profile");?></li>
+				<li><?php echo anchor("Welcome/seekerprog/{$this->session->userdata['Mobile']}","Profile");?></li>
 				<li><?php echo anchor("Login_seeker/user_logout","Log Out");?></li>
 			</ul>
 		</div>
