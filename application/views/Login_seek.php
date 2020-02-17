@@ -24,7 +24,7 @@
 	<div class="col-md-6">
 	<div class="form-group">
 		<label class="col-md-3 ">User Credential</label>
-				<div class="col-md-9">
+				<div class="col-sm-10">
 					<?php echo form_input(['name'=>'Email' ,'class'=>'form-control' ,'placeholder'=>'Email']);?>
 				</div>
 	</div>
@@ -35,7 +35,7 @@
 	<div class="col-md-6">
 	<div class="form-group">
 		<label class="col-md-3 ">Password</label>
-				<div class="col-md-9">
+				<div class="col-sm-10">
 					<?php echo form_password(['name'=>'Password' ,'class'=>'form-control' ,'placeholder'=>'Password']);?>
 				</div>
 	</div>

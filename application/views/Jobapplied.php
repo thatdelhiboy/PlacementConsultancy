@@ -1,4 +1,4 @@
-<div class="col-md-9">
+<div class="col-sm-10">
 <?php if(is_array($result)||is_object($result)){
 		foreach($result as $row){?>
 <ol>

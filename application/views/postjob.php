@@ -1,4 +1,4 @@
-<div class="col-md-9" style="width: 100%;">
+<div class="col-sm-10" style="width: 100%;">
 	<?php echo form_open("jobpost",['class'=>'form-horizontal']); ?>
 
 				<?php echo form_hidden('Posting_time');?>

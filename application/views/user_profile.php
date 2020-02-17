@@ -7,7 +7,7 @@ $usrname=$this->session->userdata('Username');
 	<h3>Employer Dashboard</h3>
 	<hr>
 </div>
-		<div class="col-md-2 " id="dashboardlistemployer" style="padding: 0px;">
+		<div class="col-sm-2 " id="dashboardlistemployer" style="padding: 0px;">
 
 			<div class="wrapper" style="height:100vh">
 				<div class="sidebar">

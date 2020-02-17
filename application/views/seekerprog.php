@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-sm-10">
 	<table class="table table-responsive-md table-bordered table-sm table-striped">
 
 		<tr>
@@ -72,7 +72,7 @@
 					<label>Percentage</label>
 					<?php echo form_input(['name'=>'percentage','class'=>'form-control','type'=> 'number', 'required'=>'required','placeholder'=>'Percentage']);?>                </div>
                 <div class="form-group">
-					<label>Board</label>
+					<label>Year</label>
 					<?php echo form_input(['name'=>'year','type'=> 'number', 'required'=>'required','class'=>'form-control','placeholder'=>'Year']);?>                </div>
             </div>
             <div class="modal-footer">

@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-sm-10">
 	<table class="table table-bordered table-sm table-striped">
 	<thead>
 	<tr style="text-align:center;">

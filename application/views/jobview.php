@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-sm-10">
 			<table class="table-responsive-md table-bordered table-striped">
 				<thead>
 				<tr>

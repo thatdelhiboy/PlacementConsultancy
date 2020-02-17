@@ -1,6 +1,6 @@
 <div class="container">
 <div class="jumbotron">
-<div class="col-md-9">
+<div class="col-sm-10">
 <hr>
 <h3 style="background: rgb(20,20,20);width:100%;color: rgb(200,200,200);">Personal Information</h3>
 <ul style="list-style-type: none;">
