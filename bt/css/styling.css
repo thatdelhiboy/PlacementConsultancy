@@ -181,15 +181,21 @@ hr{
   margin: 0;
 }
 
-body > div.row > div > div{
-  padding: 0;
+div#dashboardlistemployer.col-md-3{
+  padding: 40px !important;
 }
 
 
-body > div.row > div > div > div > div > ul{
-  padding: 40px;
+#dashboardlistemployer > div > div > ul{
+  padding: 10px;
 }
 
+
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
 /* dashboard */
 
 

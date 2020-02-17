@@ -4,7 +4,7 @@ class Jobpost extends MX_Controller{
 		 $this->load->library('form_validation');
                 $this->form_validation->set_rules('Title', 'Title', 'required');
 				//$this->form_validation->set_rules('Last_Name', 'Last Name');
-				$this->form_validation->set_rules('Skill', 'Job Description', 'required|max_length[250]');
+				$this->form_validation->set_rules('Skill', 'Job Description', 'required|max_length[20000]');
 				$this->form_validation->set_rules('City', 'City', 'required');
 				$this->form_validation->set_rules('Salary', 'Salary', 'required');
 				 $this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');

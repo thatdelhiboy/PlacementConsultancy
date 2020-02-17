@@ -1,5 +1,4 @@
-<div class="col-md-8">
-<div class="block"></div>
+<div class="col-md-9">
 			<table class="table-responsive-md table-bordered table-striped">
 				<thead>
 				<tr>
@@ -7,10 +6,8 @@
 				</tr>
 				
 				<tr>
-					
 					<th>Job Id</th>
 					<th>Job Title</th>
-					<th>Job Description</th>
 					<th>City</th>
 					<th>Created By</th>
 					<th>Salary</th>
@@ -26,7 +23,6 @@ foreach ($result as $row){
 		<tr>
 		<td class="text-center"><?php echo htmlentities($row->Job_id);?></td>
 		<td><?php echo htmlentities($row->Title);?></td>
-		<td><?php echo htmlentities($row->Skill);?></td>
 		<td><?php echo htmlentities($row->City);?></td>
 		<td><?php echo htmlentities($row->Posting_time);?></td>
 		<td><?php echo htmlentities($row->Salary);?></td>

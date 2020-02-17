@@ -112,7 +112,7 @@ class Welcome extends MX_Controller {
 	public function deleteJob($id){
 		$this->load->model('Queries');
 		if($this->Queries->removeJob($id)){
-			return redirect("Welcome/dashboard");
+			return redirect("Jobview");
 		}
 	}
 	public function seekerprog($mobile){

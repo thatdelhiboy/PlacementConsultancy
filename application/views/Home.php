@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 	}
 </style>
 <!-- homepage serch menu and button  -->
-<div class="searchbar col-md-12" style="">
+<div class="searchbar col-md-12">
 
 	<div class="input-group mb-3 col-md-6">
 		<input type="text" name="jobtitle" id="jobtitle" placeholder="Job Title" class="form-control searchboxhome"
