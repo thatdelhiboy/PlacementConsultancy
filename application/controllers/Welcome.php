@@ -94,6 +94,7 @@ class Welcome extends MX_Controller {
 		$jobs=$this->Queries->getjob($id);
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
+		$this->load->view('user_profile');
 		$this->load->view('Editjob',['jobs'=>$jobs]);
 		$this->load->view('inc/footer');
 	}
@@ -106,7 +107,7 @@ class Welcome extends MX_Controller {
 		if($this->Queries->updateJob($data,$id)){
 			$this->session->set_flashdata('message','Job Updated Successfully');
 		}
-		return redirect("Welcome/editjob/{$id}");
+		return redirect("Jobview");
 		
 	}
 	public function deleteJob($id){

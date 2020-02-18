@@ -199,3 +199,17 @@ label {
 /* dashboard */
 
 
+/* footer */
+#wrapper {
+  background-color: #e3f2fd;
+  min-height: 100%;
+  height: auto !important;
+  margin-bottom: -50px; /* the bottom margin is the negative value of the footer's total height */
+}
+
+#wrapper:after {
+  content: "";
+  display: block;
+  height: 50px; /* the footer's total height */
+}
+/* footer */

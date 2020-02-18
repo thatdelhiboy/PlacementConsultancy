@@ -12,4 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('bt/css/styling.css');?>"/>
 	<script type="text/javascript" src="<?php echo base_url();?>bt/js/jquery.js" language="javascript"></script>
 </head>
-<body style="position: relative;min-height: 100vh;padding-bottom: 60px;">
+<body style="position: relative;">
+<div id="wrapper" style="min-height: 100%;
+  height: auto !important;
+  margin-bottom: -50px;">
