@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <style>
 	body{
-		background-image:url(https://www.elsetge.cat/myimg/f/114-1145577_alphagamma-my-millennial-job-search-part-i-the.png); background-size:cover; background-repeat:no-repeat; height:100vh
+		background-image:url(https://www.elsetge.cat/myimg/f/114-1145577_alphagamma-my-millennial-job-search-part-i-the.png) !important; background-size:cover; background-repeat:no-repeat; height:100vh
 	}
 </style>
 <!-- homepage serch menu and button  -->

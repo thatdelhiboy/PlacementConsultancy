@@ -36,7 +36,8 @@ class Seeksignup extends MX_Controller {
 						'Mobile'=>$this->input->post('Mobile'),
 						'Password'=> $this->input->post('Password'),
 						'Date'=>mdate('%Y-%m-%d',now()));
-				
+						$roledata =array('role_id'=> 1,
+						'username'=> $this->input->post('Username'));
 						//echo '<pre>';
 						//print_r($data);
 						//echo '</pre>';
@@ -51,7 +52,7 @@ class Seeksignup extends MX_Controller {
 						];
 						$this->session->set_userdata($sessionData);
 						$this->load->model('Queries');
-						if($this->Queries->registerSeeker($data))
+						if($this->Queries->registerSeeker($data,$roledata))
 						{
 							$this->session->set_flashdata('message','Registered data successfully');
 							return redirect("welcome/seekRegister");
