@@ -11,17 +11,14 @@ class Addskill extends MX_Controller{
 				$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 				if($this->form_validation->run() == FALSE)
                 {
-						$response = array(
-						'status'=>'error',
-						'message'=>validation_errors()
-						);
+						echo validation_errors();
                 }
                 else
                 {	
 			
 					$this->load->model('Queries');
 					$id=rand(30,200);
-					
+						
 					if((boolean)$this->Queries->userexist($usrname))
 					{
 						$eid=$this->Queries->userexist($usrname);
@@ -35,10 +32,17 @@ class Addskill extends MX_Controller{
 					);
 					
 					if($this->Queries->addskills($data,$usrname)){
-						$response= array(
+						/*$response= array(
 						'status'=>'success',
 						'message'=>"<h5>Updated</h5>"
-						);
+						);*/
+						$result=$this->Queries->addskills($data,$usrname);
+						$msg['success'] = false;
+		$msg['type'] = 'add';
+		if($result){
+			$msg['success'] = true;
+		}
+		echo json_encode($msg);
 					}
 					else{
 					$this->session->set_flashdata('message','Updation Failed');
@@ -55,11 +59,17 @@ class Addskill extends MX_Controller{
 					);
 					if((boolean)$this->Queries->addskills($data,$usrname))
 					{
-						$response= array(
+					/*	$response= array(
 						'status'=>'success',
 						'message'=>"<h5>Updated</h5>"
 						);
-						
+						*/
+						$msg['success'] = false;
+		$msg['type'] = 'add';
+		if($result){
+			$msg['success'] = true;
+		}
+		echo json_encode($msg);
 						
 					}
 					else{
@@ -75,8 +85,8 @@ class Addskill extends MX_Controller{
 					
 					
 					
-				$this->output->set_content_type('application/json')
-				->set_output(json_encode($response));
+				/*$this->output->set_content_type('application/json')
+				->set_output(json_encode($msg));*/
 			}
 	}
 	

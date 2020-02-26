@@ -22,6 +22,7 @@ class Addskills extends MX_Controller{
 	}
 	public function editskill(){
 			$id = $this->input->post('txtid');
+	
 		$this->load->model('Queries');
 		$result = $this->Queries->updateSkill($id);
 		
