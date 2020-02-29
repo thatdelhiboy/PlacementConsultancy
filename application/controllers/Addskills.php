@@ -22,10 +22,18 @@ class Addskills extends MX_Controller{
 	}
 	public function editskill(){
 			$id = $this->input->post('txtid');
-	
-		$this->load->model('Queries');
-		$result = $this->Queries->updateSkill($id);
+	$field = array(
+		'Skill'=>$this->input->post('Skill'),
+		'level'=>$this->input->post('level'),
+		'descr'=>$this->input->post('descr')
+		);
 		
+		$this->load->model('Queries');
+		$result = $this->Queries->updateSkill($id,$field);
+		//echo '<pre>';
+		//print_r($field);
+		//echo '</pre>';
+		//exit();
 		$msg['success'] = false;
 		$msg['type'] = 'update';
 		if($result){

@@ -9,29 +9,29 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-                <?php echo anchor("welcome","Home",['class'=>'nav-link active']);?>
+            <li class="nav-item">
+                <?php echo anchor("welcome",'<i class="fas fa-home"></i>',['class'=>'nav-link active']);?>
             </li>
             <?php if(!$this->session->userdata('Username')){?>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    SignIn
+            <li class="nav-item dropdown pl-5">
+                <a class="nav-link " href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-sign-in-alt"></i><span class="hidden-tablet pl-2 ">SignIn</span>
+                    
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a href="#JobSeeker" class="trigger-btn dropdown-item" data-toggle="modal">JobSeeker</a>
+                <div class="dropdown-menu">
+                   <a href="#JobSeeker" class="dropdown-item" data-toggle="modal">JobSeeker</a>
                     <div class="dropdown-divider"></div>
-                    <a href="#Employer" class="trigger-btn dropdown-item" data-toggle="modal">Employer</a>
+                    <a href="#Employer" class="dropdown-item" data-toggle="modal">Employer</a>
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    SignUp
+            <li class="nav-item dropdown pl-2">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-plus"></i>
+                    <span class="hidden-tablet pl-2 ">Sign Up</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelled-by="navbarDropdown">
                     <?php echo anchor("welcome/seekRegister","JobSeeker",['class'=>'dropdown-item']);?>                    
 
                     <div class="dropdown-divider"></div>
@@ -42,7 +42,7 @@
 
             <?php if($this->session->userdata('Email')&& ($this->session->userdata('role_id')==2)){?>
 <li class="nav-item ">
-<?php echo anchor("welcome/Dashboard","Dashboard",['class'=>'nav-link active']);?>
+<?php echo anchor("welcome/dashboard","Dashboard",['class'=>'nav-link active']);?>
 </li>
 <?php } elseif($this->session->userdata('Email') && ($this->session->userdata('role_id')==1)){?>
 <?php echo anchor("welcome/dashboard_seeker","Dashboard",['class'=>'nav-link active']);?>

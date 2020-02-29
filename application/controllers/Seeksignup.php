@@ -36,21 +36,22 @@ class Seeksignup extends MX_Controller {
 						'Mobile'=>$this->input->post('Mobile'),
 						'Password'=> $this->input->post('Password'),
 						'Date'=>mdate('%Y-%m-%d',now()));
-						$data_rol= array('role_id'=>1,
-						'username'=>$this->input->post('Username'));
+				
 						//echo '<pre>';
 						//print_r($data);
 						//echo '</pre>';
 						$data['Password']=sha1($this->input->post('Password'));
 						$sessionData = [
+						'First_Name'=> $data->First_Name,
+						'Last_Name'=> $data->Last_Name,
 						'Username'=>$data->Username,
 						'Email'=>$data->Email,
-						 'Date'=>$data->Date,
-						 'role_id'=>$data_rol->username
+						'Gender'=>$data->Gender,
+						 'Date'=>$data->Date
 						];
 						$this->session->set_userdata($sessionData);
 						$this->load->model('Queries');
-						if($this->Queries->registerSeeker($data,$data_rol))
+						if($this->Queries->registerSeeker($data))
 						{
 							$this->session->set_flashdata('message','Registered data successfully');
 							return redirect("welcome/seekRegister");

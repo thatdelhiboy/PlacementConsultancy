@@ -16,11 +16,11 @@ class Viewjob_seeker extends MX_Controller{
 		$this->load->model('Queries');
 		if($this->Queries->likejob($data))
 		{
-		$this->session->set_flashdata('message','Registered data successfully');
+		$this->session->set_flashdata('message','Updated successfully');
 							return redirect("Viewjob_seeker");
 						}
 						else{
-					$this->session->set_flashdata('message','Registeration Failed');
+					$this->session->set_flashdata('message','Updation failed Failed');
 							return redirect("Viewjob_seeker");
 						
                 }	

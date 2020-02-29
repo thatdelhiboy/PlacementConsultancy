@@ -10,12 +10,13 @@
 	</div>
 	<?php 
 	 } ?>
-<div class="col-sm-10" >
-	<table class="table-responsive-sm table-bordered table-striped"style="margin:10px auto">
+<div class="col-sm-10">
+	<table class="table-responsive-md table-bordered table-striped">
 	<thead>
 	<tr style="text-align:center;">
 	<th>Job Title</th>
 	<th>Created by</th>
+	<th>Requirements</th>
 	<th>Salary</th>
 	<th>Job location</th>
 	</tr>
@@ -25,10 +26,11 @@
 		foreach($job as $row){
 			if($row->Status=1){?>
 	<tr>
-	<td><?php echo htmlentities($row->Title);?></td>
-	<td><?php echo htmlentities($row->Posting_time);?></td>
-	<td><?php echo htmlentities($row->Salary);?></td>
-	<td><?php echo htmlentities($row->City);?></td>
+	<td class="px-2"><?php echo htmlentities($row->Title);?></td>
+	<td class="px-2"><?php $date =new DateTime($row->Posting_time); echo htmlentities($date->format('Y-m-d'));?></td>
+	<td class="px-2"><?php echo htmlentities($row->Eligibility);?></td>
+	<td class="px-2"><?php echo htmlentities($row->Salary);?></td>
+	<td class="px-2"><?php echo htmlentities($row->City);?></td>
 	</tr>
 			<?php } }} ?>
 	</tbody>

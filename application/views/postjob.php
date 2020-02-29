@@ -6,7 +6,7 @@
 				<label style="margin-top: 1rem;">Title</label>
 				<?php echo form_input(['name'=>'Title', 'class'=>'form-control' ,'placeholder'=>'Title']);?>
 				<label style="margin-top: 1rem;">Job Description</label>
-				<?php echo form_textarea(['name'=>'Skill', 'class'=>'form-control' ,'placeholder'=>'Describe under 250 words']);?>
+				<?php echo form_textarea(['name'=>'Eligibility', 'class'=>'form-control' ,'placeholder'=>'Describe under 250 words']);?>
 				<label style="margin-top: 1rem;">City</label>
 				<?php echo form_input(['name'=>'City', 'class'=>'form-control' ,'placeholder'=>'City']);?>
 				<label style="margin-top: 1rem;">Salary</label>

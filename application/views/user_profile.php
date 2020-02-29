@@ -17,7 +17,7 @@ $usrname=$this->session->userdata('Username');
 						<li><?php echo anchor("welcome/postjob","Post Job");?></li>
 						<li><?php echo anchor("Jobview","View Job");?></li>
 						<li><?php echo anchor("Applied_job","Candidates Applied");?></li>
-						<li><?php echo anchor("welcome/Dashboard","Profile");?></li>
+						<li><?php echo anchor("welcome/dashboard","Profile");?></li>
 						<li><?php echo anchor("Login_seeker/user_logout","Log Out");?></li>
 					</ul>
 				</div>

@@ -14,12 +14,12 @@
 	<?php if(count($job)){
 		foreach($job as $row){?>
 	<tr>
-	<td><?php echo htmlentities($row->Title);?></td>
-	<td><?php echo htmlentities($row->Posting_time);?></td>
-	<td><?php echo htmlentities($row->Skill);?></td>
-	<td><?php echo htmlentities($row->Salary);?></td>
-	<td><?php echo htmlentities($row->City);?></td>
-	<td><?php echo anchor("Viewjob_seeker/selectjob/{$row->Job_id}","Apply",['class'=>'btn btn-success']);?><?php 
+	<td class="px-2"><?php echo htmlentities($row->Title);?></td>
+	<td class="px-2"><?php $date =new DateTime($row->Posting_time); echo htmlentities($date->format('Y-m-d'));?></td>
+	<td class="px-2"><?php echo htmlentities($row->Eligibility);?></td>
+	<td class="px-2"><?php echo htmlentities($row->Salary);?></td>
+	<td class="px-2"><?php echo htmlentities($row->City);?></td>
+	<td class="px-2"><i class="fab fa-pinterest-p"></i><?php echo anchor("Viewjob_seeker/selectjob/{$row->Job_id}","Apply",['class'=>'btn btn-success px-2']);?><?php 
 	// $success_msg = $this->session->flashdata('');
 	 $error_msg = $this->session->flashdata('message');
 	  

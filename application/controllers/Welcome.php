@@ -59,7 +59,7 @@ class Welcome extends MX_Controller {
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile');
-	//	$this->load->view('sidebar1');
+		$this->load->view('sidebar1');
 		$this->load->view('inc/footer');
 	}
 	public function dashboard_seeker()
@@ -94,7 +94,6 @@ class Welcome extends MX_Controller {
 		$jobs=$this->Queries->getjob($id);
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
-		$this->load->view('user_profile');
 		$this->load->view('Editjob',['jobs'=>$jobs]);
 		$this->load->view('inc/footer');
 	}
@@ -107,7 +106,7 @@ class Welcome extends MX_Controller {
 		if($this->Queries->updateJob($data,$id)){
 			$this->session->set_flashdata('message','Job Updated Successfully');
 		}
-		return redirect("Jobview");
+		return redirect("Welcome/editjob/{$id}");
 		
 	}
 	public function deleteJob($id){
@@ -141,3 +140,4 @@ class Welcome extends MX_Controller {
 	}
 	
 }
+?>

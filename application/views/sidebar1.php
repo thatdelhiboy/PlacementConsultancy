@@ -1,52 +1,4 @@
 
-<div class="modal fade" id="editmodal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-secondary" id="staticBackdropLabel">Add skill</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-	  
-	  <?php echo form_open(" ",['id'=>'myform','role'=>'form','name'=>'skill']);?>
-	  <div class="form-group row">
-	  <?php echo form_hidden(["name"=>'txtid' , 'value'=>"5"]);?>
-	  <label class="col-form-label col-sm-3">Skill</label>
-        <?php echo form_input(['name'=>'Skill','id'=>'skill2','class'=>'form-control col-sm-6','placeholder'=>'Skill'])?>
-      </div>
-	  <div class="form-group row py-3">
-	  <label class="col-form-label col-sm-3" >Level</label>
-	  <select class="form-conrol col-sm-6" name="level" id="level2">
-	  <option value="">Select</option>
-	  <option value="Beginner">Beginner</option>
-	  <option value="Intermediate">Intermediate</option>
-	  <option value="Advance">Advance</option>
-	  </select>
-	  </div>
-	  <div class="form-group row py-3">
-	  <label class="col-form-label col-sm-3">Description</label>
-	  <?php echo form_textarea(['name'=>'descr','id'=>'desc2','class'=>'form-control col-sm-6','Placeholder'=>'Describe']);?>
-	  </div>
-	  </div>
-	  
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <?php
-		$link=[
-		'value'=>'Update',
-		'name'=>'mySubmit',		
-		'class'=>'btn btn-primary',
-		'id'=>'update2'
-		];
-		echo form_submit($link);
-		echo form_close();
-		?>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="modal fade" id="addmodal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -58,9 +10,9 @@
       </div>
       <div class="modal-body">
 	  
-	  <?php echo form_open("Addskill/{$this->session->userdata('Username')}",['id'=>'submitform','role'=>'form','name'=>'skill']);?>
+	  <?php echo form_open("Addskill/{$this->session->userdata('Username')} ",['id'=>'submitform','role'=>'form','name'=>'skill']);?>
 	  <div class="form-group row">
-	  <?php echo form_hidden(["name"=>'txtid' , 'value'=>"5"]);?>
+	  <?php echo form_input(["name"=>'txtid' ,'id'=>'txt','type'=>'hidden','value'=>'0']);?>
 	  <label class="col-form-label col-sm-3">Skill</label>
         <?php echo form_input(['name'=>'Skill','id'=>'skill','class'=>'form-control col-sm-6','placeholder'=>'Skill'])?>
       </div>
@@ -143,8 +95,8 @@
 <td></tr>
 				
 			</table>
-			<br><br>
-			<div class="py-4 pl-3 text-light" id="showdata" style="height: 250px; overflow:auto;background: teal">
+			<br>
+			<div class="py-4 pl-3 text-light" id="showdata" style="height: 300px; overflow:auto;background: teal">
 			</div>
 		</div>
 	</div>
@@ -152,6 +104,7 @@
 	$(document).ready(function(){
 		$('.addbtn').on('click',function(){
 			$('#addmodal').modal('show');
+		//	$('#submitform').attr('action','<?php echo base_url() ?>Addskill/{$this->session->userdata(\'Username\')}');
 		});
 		
 	});
@@ -193,18 +146,23 @@
 			var submitform= $(this);
 			$.ajax({
 				type: "ajax",
-				method: 'get',
+				method: 'post',
 				url: submitform.attr('action'),
 				
 				data: submitform.serialize(),
 				async: false,
 				dataType: 'json',
 				success: function(response){
-					console.log(response);
-					if(response.status=='success'){
-						$("#addmodal").hide();
-					}
-					$("#message").html(reponse.message);
+					if(response.success){
+							$('#myModal').modal('hide');
+							$('#myForm')[0].reset();
+					if(response.type=='add'){
+								var type = 'added'
+							}else if(response.type=='update'){
+								var type ="updated"
+							}
+							$('.alert-success').html('Employee '+type+' successfully').fadeIn().delay(4000).fadeOut('slow');
+					load_data();}
 				},
 				error: function(){
 					alert('Could not update');
@@ -214,12 +172,12 @@
 			//edit
 		$('#showdata').on('click', '.item-edit', function(){
 			var id = $(this).attr('data');
-			$('#editmodal').modal('show');
-			$('#editmodal').find('.modal-title').text('Edit Skill');
-			$('#myform').attr('action', '<?php echo base_url() ?>Addskills/editskill');
+			$('#addmodal').modal('show');
+			$('#addmodal').find('.modal-title').text('Edit Skill');
+			$('#submitform').attr('action', '<?php echo base_url() ?>Addskills/editskill');
 			$.ajax({
 				type: 'ajax',
-				method: 'POST',
+				method: 'post',
 				url: '<?php echo base_url() ?>Addskills/editsSkill',
 				data:{Id:id},
 				async: false,
@@ -229,6 +187,9 @@
 					$('input[name=Skill]').val(data.Skill);
 					$('select[name=level]').val(data.level);
 					$('textarea[name=descr]').val(data.descr);
+				
+					//alert(document.getElementById('txt'));
+					//exit;
 				},
 				error: function(){
 					alert('Could not Edit Data');
