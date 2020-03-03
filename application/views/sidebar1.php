@@ -104,7 +104,7 @@
 	$(document).ready(function(){
 		$('.addbtn').on('click',function(){
 			$('#addmodal').modal('show');
-		//	$('#submitform').attr('action','<?php echo base_url() ?>Addskill/{$this->session->userdata(\'Username\')}');
+		
 		});
 		
 	});

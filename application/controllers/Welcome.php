@@ -115,9 +115,9 @@ class Welcome extends MX_Controller {
 			return redirect("Jobview");
 		}
 	}
-	public function seekerprog($mobile){
+	public function seekerprog($usrname){
 		$this->load->model('Queries');
-		$pro=$this->Queries->getqual($mobile);
+		$pro=$this->Queries->getqual($usrname);
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile2');

@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Login_seeker extends MX_Controller {
 
         public function index()

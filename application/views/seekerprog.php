@@ -29,7 +29,7 @@
 				<th>Year</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="text-center">
 			<?php
 			 if(is_array($pro)||is_object($pro)){
 					foreach($pro as $row){?>
@@ -45,11 +45,14 @@
 			</tr>
 		</tbody>
 	</table>
-	<br><hr>
-	<div class="py-4 pl-3 text-light" id="showdata" style="height: 300px; overflow:auto;background: teal">
-			</div>
+	<br><hr style="border: 2px solid light";">
 	<h3>Skills</h3>
-	<a href="#addmodal" style="text-align:center;" class="trigger-btn dropdown-item bg-primary" data-toggle="modal"><i class="fa fa-plus"></i> Click here to add Skill</a>
+	<div class="py-4 pl-3 text-light" id="showdata" style="height: 200px; overflow:auto;background: teal">
+			</div>
+	<div>
+	<a href="#addmodal" style="text-align:center;" class="trigger-btn addbtn dropdown-item bg-primary" data-toggle="modal"><i class="fa fa-plus"></i> Click here to add Skill</a>
+	<button onclick="load_data()">View Skills</button>
+	</div>
 </div>
 </div>
 </div>
@@ -65,7 +68,7 @@
       </div>
       <div class="modal-body">
 	  
-	  <?php echo form_open("Addskill/{$this->session->userdata('Username')} ",['id'=>'submitform','role'=>'form','name'=>'skill']);?>
+	  <?php echo form_open("Addseekerskill/{$this->session->userdata('Username')} ",['id'=>'submitform','role'=>'form','name'=>'skill']);?>
 	  <div class="form-group row">
 	  <?php echo form_input(["name"=>'txtid' ,'id'=>'txt','type'=>'hidden','value'=>'0']);?>
 	  <label class="col-form-label col-sm-3">Skill</label>
@@ -140,18 +143,55 @@
 
 <!-- addqualification popup -->
 <script type="text/javascript">
-
+	$(document).ready(function(){
+		$('.addbtn').on('click',function(){
+			$('#addmodal').modal('show');
+		
+		});
+		
+	});
+	function load_data(){
+			$.ajax({
+				type: 'ajax',
+				url: '<?php echo base_url()?>Addseekskill/showskills',
+				async: false,
+				method: 'get',
+				dataType: 'json',			
+				success: function(data){
+					
+					var html= '';
+					var i;
+					for(i=0;i<data.length;i++){
+						html +='<ul style="list-style-type:none;">'+
+						'<li>'+data[i].Skill+'</li>'+
+						'<li>'+data[i].level+'</li>'+
+						'<li>'+data[i].descr+'</li>'+'<li>'+
+						'<a href="javascript:;" class="btn btn-info my-3 item-edit" data="'+data[i].Id+'">Edit</a>'+
+						'<a href="javascript:;" class="btn btn-danger my-3 ml-3 item-delete" data="'+data[i].Id+'">Delete</a>' +'</li>'+
+						'</ul>'+'<hr>';
+					}
+					$('#showdata').html(html);
+				},
+				error: function(){
+					alert('Could not get data');
+				}
+		});
+		}
+		
+	
+	</script>
+<script type="text/javascript">
 $(function(){
-	load_data();
+	
 	$('#showdata').on('click','.item-delete',function(){
 		var id=$(this).attr('data');
 		$('#deleteModal').modal('show');
 		$('#btnDelete').unbind().click(function(){
 				$.ajax({
 					type: 'ajax',
-					method: 'get',
+					method: 'post',
 					async: false,
-					url: '<?php echo base_url() ?>Addskills/deletaskill',
+					url: '<?php echo base_url() ?>Addseekskill/deletaskill',
 					data:{Id:id},
 					dataType: 'json',
 					success: function(response){
@@ -203,11 +243,11 @@ $(function(){
 			var id = $(this).attr('data');
 			$('#addmodal').modal('show');
 			$('#addmodal').find('.modal-title').text('Edit Skill');
-			$('#submitform').attr('action', '<?php echo base_url() ?>Addskills/editskill');
+			$('#submitform').attr('action', '<?php echo base_url() ?>Addseekskill/editskill');
 			$.ajax({
 				type: 'ajax',
 				method: 'post',
-				url: '<?php echo base_url() ?>Addskills/editsSkill',
+				url: '<?php echo base_url() ?>Addseekskill/editsSkill',
 				data:{Id:id},
 				async: false,
 				dataType: 'json',
@@ -225,32 +265,6 @@ $(function(){
 				}
 			});
 		});
-	function load_data(){
-			$.ajax({
-				type: 'ajax',
-				url: '<?php echo base_url() ?>Addseekskill/showskills',
-				async: false,
-				method: 'get',
-				dataType: 'json',			
-				success: function(data){
-					
-					var html= '';
-					var i;
-					for(i=0;i<data.length;i++){
-						html +='<ul style="list-style-type:none;">'+
-						'<li>'+data[i].Skill+'</li>'+
-						'<li>'+data[i].level+'</li>'+
-						'<li>'+data[i].descr+'</li>'+'<li>'+
-						'<a href="javascript:;" class="btn btn-info my-3 item-edit" data="'+data[i].Id+'">Edit</a>'+
-						'<a href="javascript:;" class="btn btn-danger my-3 ml-3 item-delete" data="'+data[i].Id+'">Delete</a>' +'</li>'+
-						'</ul>'+'<hr>';
-					}
-					$('#showdata').html(html);
-				},
-				error: function(){
-					alert('Could not get data');
-				}
-		});
-		}
+	
 });
 </script>

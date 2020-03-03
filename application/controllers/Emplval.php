@@ -17,6 +17,7 @@ class Emplval extends MX_Controller {
                         array('required' => 'You must provide a %s.')
                 );
                 $this->form_validation->set_rules('Password_Confirmation', 'Password Confirmation', 'required');
+				$this->form_validation->set_rules('orgname', 'Organisation Name', 'required');
 					$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
                 if ($this->form_validation->run() == FALSE)

@@ -50,6 +50,13 @@ class Title_search extends MX_Controller{
   $output .= '</table>';
   echo $output;
  }
+ public function show()
+ {
+	 $this->load->view('inc/header');
+	 $this->load->view('inc/nav');
+	 $this->load->view('showsearch');
+	 $this->load->view('inc/footer');
+ }
  
 }
 	

@@ -94,6 +94,21 @@
 			
 			</div>
 </div>
+<div class="row">
+		<div class="col-md-6">
+			<div class="form-group py-3 row">
+				<label class="col-md-4 col-form-label">Organisation Name</label>
+				<div class="col-md-8">
+					<?php echo form_input(['name'=>'orgname' ,'class'=>'form-control' ,'placeholder'=>'Organisation Name']);?>
+				</div>
+				
+			</div>
+			
+			</div>
+			<div class="col-md-6">
+			<?php echo form_error('orgname','<div class="text-danger">','</div>');?>
+			</div>
+		</div>
 <button type="submit" class="btn btn-primary">REGISTER</button>
 
 <?php echo anchor("welcome","Back",['class'=>'btn btn-primary']);?>
