@@ -36,7 +36,8 @@ class Queries extends CI_Model{
 		
 	}
 	public function registerSeeker($data,$data_rol){
-		
+		$this->db->set($data);
+		$this->db->set($data_rol);
 		if($this->db->insert('role',$data_rol))		
 		return $this->db->insert('seeker',$data);
 		
@@ -79,7 +80,7 @@ class Queries extends CI_Model{
 			$this->db->from('job');
 			$this->db->join('Opted','opted.Job_id=job.Job_id','inner');
 			$query=$this->db->get();*/
-			$query=$this->db->select('Title,Posting_time,Skill,Salary,City,Job_id')->get('job');
+			$query=$this->db->select('Title,Posting_time,Eligibility,Salary,City,Job_id')->get('job');
 			return $query->result();
 		}
 		public function likejob($data){
@@ -87,7 +88,7 @@ class Queries extends CI_Model{
 			return $this->db->insert('opted',$data);
 		}
 		public function likedjob($id){
-			$this->db->select('job.Posting_time,job.Title,job.City,job.Skill,job.Salary,opted.Status');
+			$this->db->select('job.Posting_time,job.Title,job.City,job.Eligibility,job.Salary,opted.Status');
 			$this->db->from('job');
 			$this->db->join('opted','opted.Job_id=job.Job_id','inner');
 			$this->db->where('opted.Like_id',$id);
@@ -95,7 +96,7 @@ class Queries extends CI_Model{
 			return $query->result();
 		}
 		public function application(){
-			$this->db->select('job.Title,job.Salary,job.Skill,opted.status,seeker.First_Name,seeker.Last_Name,seeker.Username');
+			$this->db->select('job.Title,job.Salary,job.Eligibility,opted.status,seeker.First_Name,seeker.Last_Name,seeker.Username');
 			$this->db->from('job');
 			$this->db->join('opted','opted.Job_id=job.Job_id');
 			$this->db->join('seeker','seeker.Mobile=opted.Like_Id');
@@ -114,6 +115,152 @@ class Queries extends CI_Model{
 			$query=$this->db->get();
 			return $query->result();
 		}
+		public function showempdet($usrname)
+		{
+			$query=$this->db->select('*')->where('Username',$usrname)->get('employer');
+			if($query->num_rows()>0)
+			{
+				return $query->row();
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public function addskills($a,$usrname){
+			if($this->db->select('skill_id')->where('Username',$usrname)->get('employer')===0)
+			{
+				$this->db->where('Username',$usrname)->update('employer','skill_id');
+			}
+			return $this->db->insert('skill',$a);
+		}
+		public function addseekskills($a,$usrname){
+			if($this->db->select('Skill_id')->where('Username',$usrname)->get('seeker')===0)
+			{
+				$this->db->where('Username',$usrname)->update('seeker','Skill_id');
+			}
+			return $this->db->insert('skill',$a);
+		}
+		public function userexist($usrname){
+			$this->db->select('employer.skill_id');
+			$this->db->from('employer');
+			$this->db->where('Username',$usrname);
+			$this->db->join('skill','employer.skill_id=skill.Skill_id');
+			
+			$id=$this->db->get();
+			if($id->num_rows()>0){
+			return $id->row();}
+			else{
+				return false;
+			}
+		}
+		public function userseekexist($usrname){
+			$this->db->select('seeker.Skill_id');
+			$this->db->from('seeker');
+			$this->db->where('Username',$usrname);
+			$this->db->join('skill','seeker.Skill_id=skill.Skill_id');
+			
+			$id=$this->db->get();
+			if($id->num_rows()>0){
+			return $id->row();}
+			else{
+				return false;
+			}
+		}
+		public function showseekskill($usrname){		
+			$this->db->select('Skill,level,descr,Id');
+			$this->db->from('skill');
+			$this->db->join('seeker','seeker.Skill_id = skill.Skill_id');
+			$this->db->where('seeker.Username',$usrname);
+			$query=$this->db->get();
+		
+			if($query->num_rows() > 0)
+			{
+				return $query->result();
+			}
+			else{
+				return false;
+			}
+		
+		}
+		public function showallskill($usrname){
+			$this->db->select('Skill,level,descr,Id');
+			$this->db->from('skill');
+			$this->db->join('employer','employer.skill_id=skill.Skill_id');
+			$this->db->where('employer.Username',$usrname);
+			$query=$this->db->get();
+		
+			if($query->num_rows() > 0)
+			{
+				return $query->result();
+			}
+			else{
+				return false;
+			}
+		}
+		public function deleteskill(){
+		$id = $this->input->get('Id');
+		$this->db->where('Id', $id);
+		$this->db->delete('skill');
+		if($this->db->affected_rows() > 0){
+			return true;
+		}else{
+			return false;
+		}
+		
+
+	}
+		public function updateSkill($id,$field){
+		
+		
+		$this->db->where('Id', $id);
+		$this->db->update('skill', $field);
+		if($this->db->affected_rows() > 0){
+			return true;
+		}else{
+			return false;
+		}
+		}
+		public function edit($id){
+			
+		$this->db->where('Id', $id);
+		$query = $this->db->get('skill');
+		if($query->num_rows() > 0){
+			return $query->row();
+		}else{
+			return false;
+		}
+		}
+		 public function fetch_data($query)
+		{
+			$this->db->like('Title',$query);
+			$query= $this->db->get('job');
+			if($query->num_rows()>0){
+				foreach($query->result_array() as $row)
+				{
+					$output[] =array(
+					'name'=> $row['Title']);
+				}
+				echo json_encode($output);
+			}
+		}
+		public function fetch_title($query){
+
+  $this->db->select("*");
+  $this->db->from("job");
+  if($query != '')
+  {
+   $this->db->like('Title', $query);
+   $this->db->or_like('City', $query);
+   $this->db->or_like('Eligibility', $query);
+   //$this->db->or_like('Posting_time',array('Posting_time'=>date('Y-m-d')));
+  }
+  $this->db->order_by('Job_id', 'DESC');
+  return $this->db->get();
+ }
+
+
+		
 		
 	}
 
