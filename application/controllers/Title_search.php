@@ -17,14 +17,14 @@ class Title_search extends MX_Controller{
   }
   $data = $this->Queries->fetch_title($query);
   $output .= '
-  <div class="table-responsive mx-auto">
-     <table class="table table-bordered table-striped  text-secondary">
-      <tr>
-       <th>Title</th>
-       <th>City</th>
-       <th>Eligibility</th>
-       <th>Posted by</th>
-      </tr>
+  <!--<div class="table-responsive mx-auto">
+     <uclass="table table-bordered table-striped  text-secondary">
+      <ul>
+       <li>Title</li>
+       <li>City</li>
+       <li>Eligibility</li>
+       <li>Posted by</li>
+      </ul>-->
   ';
   if($data->num_rows() > 0)
   {
@@ -32,20 +32,21 @@ class Title_search extends MX_Controller{
    {
 	   $date =new DateTime($row->Posting_time);
     $output .= '
-      <tr>
-       <td>'.$row->Title.'</td>
-       <td>'.$row->City.'</td>
-       <td>'.$row->Eligibility.'</td>
-       <td>'.$date->format('Y-m-d').'</td>
-      </tr>
+      <ul style="list-style-type: none">
+       <li>'.$row->Title.'</li>
+       <li>'.$row->City.'</li>
+       <li>'.$row->Eligibility.'</li>
+       <li>'.$date->format('Y-m-d').'</li>
+	  
+      </ul> <button onclick="apply()" class="btn btn-success ml-3 mb-3" >Apply</button><hr>
     ';
    }
   }
   else
   {
-   $output .= '<tr>
-       <td colspan="5">No Data Found</td>
-      </tr>';
+   $output .= '<ul>
+       <li colspan="5">No Data Found</li>
+      </ul>';
   }
   $output .= '</table>';
   echo $output;

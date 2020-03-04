@@ -62,7 +62,8 @@ $('#prefetch1 .typeahead').typeahead(null, {
    method:"POST",
    data:{query:query},
    success:function(data){
-    $('#result').html(data);
+    localStorage.setItem('myItem',data);
+	window.location.href = "Title_search/show";
    }
   })
  }

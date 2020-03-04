@@ -74,17 +74,33 @@
 			<table class="table table-bordered table-sm table-striped ">
 			
 				<tr>
-					<th colspan="2"><h4 class="text-center">Your Details</h4></th>
+					<th colspan="2"><h4 class="text-center">Your basic details</h4></th>
 				</tr>
 				
 				
 				<tr>
-					<td class="text-center text-secondary">User Name</td>
-					<td class="text-center text-secondary"><?php echo $this->session->userdata['Username'];?></td>
+					<td class="text-center text-secondary">Organisation Name</td>
+					<td class="text-center text-secondary"><?php echo htmlentities($result->orgname);?></td>
 				</tr>
 				<tr>
 					<td class="text-center text-secondary">Email</td>
-					<td class="text-center text-secondary"><?php echo $this->session->userdata['Email'];?></td>
+					<td class="text-center text-secondary"><?php echo htmlentities($result->Email);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">Username</td>
+					<td class="text-center text-secondary"><?php echo htmlentities($result->Username);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">First Name</td>
+					<td class="text-center text-secondary"><?php echo htmlentities($result->First_Name);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">Last name</td>
+					<td class="text-center text-secondary"><?php echo htmlentities($result->Last_Name);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">City</td>
+					<td class="text-center text-secondary"><?php echo ($result->City);?></td>
 				</tr>
 				
 				<tr> <td class="text-center text-secondary">Skills</td>

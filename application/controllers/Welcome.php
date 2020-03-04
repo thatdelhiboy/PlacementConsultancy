@@ -55,11 +55,14 @@ class Welcome extends MX_Controller {
 		
 	}
 	public function dashboard()
-	{
+	{	$usrname=$this->session->Username;
+		$this->load->model('Queries');
+		$result=$this->Queries->showempdet($usrname);
+	
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
 		$this->load->view('user_profile');
-		$this->load->view('sidebar1');
+		$this->load->view('sidebar1',['result'=>$result]);
 		$this->load->view('inc/footer');
 	}
 	public function dashboard_seeker()
