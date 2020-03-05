@@ -31,9 +31,9 @@ $(document).ready(function(){
 var sample_data = new Bloodhound({
 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
 queryTokenizer: Bloodhound.tokenizers.whitespace,
-prefetch1: '<?php echo base_url();?>autocomplete/fetch',
+prefetch1: '<?php echo base_url() ?>index.php/autocomplete/fetch',
 remote:{
-	url: '<?php echo base_url();?>autocomplete/fetch/%QUERY',
+	url: '<?php echo base_url() ?>index.php/autocomplete/fetch/%QUERY',
 	wildcard: '%QUERY'
 }	
 });
@@ -58,14 +58,14 @@ $('#prefetch1 .typeahead').typeahead(null, {
  function load_data(query)
  {
   $.ajax({
-   url:"<?php echo base_url(); ?>Title_search/fetch",
+   url:"<?php echo base_url(); ?>index.php/Title_search/fetch",
    method:"POST",
    data:{query:query},
    success:function(data){
     localStorage.setItem('myItem',data);
-	window.location.href = "Title_search/show";
+	window.location.href = "index.php/Title_search/show";
    }
-  })
+  });
  }
 
 function searchfunc(){

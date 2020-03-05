@@ -7,6 +7,7 @@ class Title_search extends MX_Controller{
 		$this->load->view('home');
 		$this->load->view('inc/footer');		
 	}
+
 	public function fetch(){
 		$output = '';
 		$query = '';
@@ -16,16 +17,16 @@ class Title_search extends MX_Controller{
    $query = $this->input->post('query');
   }
   $data = $this->Queries->fetch_title($query);
-  $output .= '
-  <!--<div class="table-responsive mx-auto">
+  $output .= '';
+  /*<div class="table-responsive mx-auto">
      <uclass="table table-bordered table-striped  text-secondary">
       <ul>
        <li>Title</li>
        <li>City</li>
        <li>Eligibility</li>
        <li>Posted by</li>
-      </ul>-->
-  ';
+      </ul>*/
+  
   if($data->num_rows() > 0)
   {
    foreach($data->result() as $row)
@@ -38,7 +39,9 @@ class Title_search extends MX_Controller{
        <li>'.$row->Eligibility.'</li>
        <li>'.$date->format('Y-m-d').'</li>
 	  
-      </ul> <button onclick="apply()" class="btn btn-success ml-3 mb-3" >Apply</button><hr>
+      </ul> <button id=\'apply\' class="btn btn-success ml-3 mb-3" >Apply</button>
+          <button class="btn btn-warning ml-3 mb-3">View</button>
+      <hr>
     ';
    }
   }
