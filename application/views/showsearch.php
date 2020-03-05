@@ -1,5 +1,15 @@
+<aside class="filterarea" style="background-color:pink;padding:20px;margin:0px;height:100%">
+<h2>Filter <i class="fa fa-filter"></i></h2>
+<input type="checkbox" name="" id=""> <span>Job Type</span> <br>
+<input type="checkbox" name="" id=""> <span>City</span> <br>
+<input type="checkbox" name="" id=""> <span>Education</span> <br>
 
-<div id="showdata" style="min-height: 30vh;min-width: 50vh; position: relative;left: 35vh;top: 10vh;overflow: auto;padding: 30vh;" >
+
+<input type="button" value="Apply Filter">
+</aside>
+
+
+<div id="showdata">
 </div>
 <script type="text/javascript">
 var data = localStorage.getItem('myItem');
