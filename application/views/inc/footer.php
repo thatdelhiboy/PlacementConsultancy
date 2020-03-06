@@ -19,7 +19,7 @@
 					<p>You can trust us. we only send promo offers, not a single spam.</p>
 					<div id="mc_embed_signup">
 						<form target="_blank" novalidate="true"
-							action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+							action="https://github.us19.list-manage.com/subscribe/post?u=2950246f2a829b8270f80b6b2&amp;id=d5273f2086"
 							method="get" class="form-inline">
 
 							<div class="form-group row" style="width: 100%">
@@ -184,6 +184,11 @@
 <script type="text/javascript" src="<?php echo base_url()?>bt/js/handlebars.js"> </script>
 <script type="text/javascript" src="<?php echo base_url()?>bt/js/typeahead.bundle.js"></script>
 
+<script>
+	$(document).ready(function () {
+		$('.dropdown-toggle').dropdown()
+	});
+</script>
 </body>
 
 </html>

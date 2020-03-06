@@ -11,7 +11,7 @@ class Applydetails extends MX_Controller{
 		$output .= '';
 		$date =new DateTime($result->Posting_time);
 		$output .= '
-      <ul style="list-style-type: none">
+      <ul style="list-style-type: none; border: 1px solid red; margin:1em;padding:2em;">
        <li>'.$result->Title.'</li>
        <li>'.$result->City.'</li>
        <li>'.$result->Eligibility.'</li>

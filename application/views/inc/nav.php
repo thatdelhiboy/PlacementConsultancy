@@ -3,14 +3,13 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
                     <div id="logo">
-                        <a href="index.html"><img src="<?php echo base_url()?>bt/img/logo2.png" alt="" title="" /></a>
+                        <a href="/"><img src="<?php echo base_url()?>bt/img/logo2.png" alt="" title="" /></a>
                     </div>
                     <nav id="nav-menu-container">
                         <ul class="nav-menu">
                             <li><a href="/">Home</a></li>
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="category.html">Category</a></li>
-                            <li><a href="price.html">Price</a></li>
                             <li><a href="blog-home.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
                             <li class="menu-has-children"><a href="">Pages</a>
@@ -22,10 +21,16 @@
                             </li>
                             <li><a class="ticker-btn" href="#">Signup</a></li>
                             <li><a class="ticker-btn" href="#">Login</a></li>
-                            <?php if(!$this->session->userdata('Username')){?>
-
+<?php if(!$this->session->userdata('Username')){?>
+    <li class="menu-has-children"><a href="">SignIn</a>
+                                <ul>
+                                    <li><a href="#JobSeeker" class="trigger-btn dropdown-item" data-toggle="modal">JobSeeker</a></li>
+                                    <li><a href="search.html">search</a></li>
+                                    <li><a href="single.html">single</a></li>
+                                </ul>
+                            </li>
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    <a class="nav-link dropdown-toggle menu-has-children" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         SignIn
     </a>

@@ -1,5 +1,8 @@
 
-<div id="showdata" style="min-height: 30vh;min-width: 50vh; position: relative;left: 35vh;top: 10vh;overflow: auto;padding: 30vh;" >
+			<section class="section-gap">
+				
+				</section>
+<div id="showdata" >
 </div>
 <script type="text/javascript">
 var data = localStorage.getItem('myItem');

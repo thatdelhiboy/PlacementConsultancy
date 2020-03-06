@@ -2299,8 +2299,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background-color: blue;
-  background: url(/bt/img/header-bg.jpg) center;
+  
+  background: url(../img/header-bg.jpg) center;
   background-size: cover;
 }
 
