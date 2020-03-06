@@ -1115,8 +1115,8 @@
         function buildCss() {
             var css = {
                 wrapper: {
-                    position: "relative",
-                    display: "inline-block"
+                    position: "inherit",
+                    display: "flex"
                 },
                 hint: {
                     position: "absolute",

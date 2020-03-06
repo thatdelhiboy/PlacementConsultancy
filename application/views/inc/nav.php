@@ -1,58 +1,36 @@
-<!-- nav by abhishk -->
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">PlacementConsultancy.in</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-                <?php echo anchor("welcome","Home",['class'=>'nav-link active']);?>
-            </li>
-            <?php if(!$this->session->userdata('Username')){?>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    SignIn
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a href="#JobSeeker" class="trigger-btn dropdown-item" data-toggle="modal">JobSeeker</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#Employer" class="trigger-btn dropdown-item" data-toggle="modal">Employer</a>
+<link rel="stylesheet" href="<?php echo base_url()?>bt/css/nav.css"> 
+ <header id="header" id="home">
+            <div class="container">
+                <div class="row align-items-center justify-content-between d-flex">
+                    <div id="logo">
+                        <a href="index.html"><img src="<?php echo base_url()?>bt/img/logo2.png" alt="" title="" /></a>
+                    </div>
+                    <nav id="nav-menu-container">
+                        <ul class="nav-menu">
+                            <li class="menu-active"><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="category.html">Category</a></li>
+                            <li><a href="price.html">Price</a></li>
+                            <li><a href="blog-home.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li class="menu-has-children"><a href="">Pages</a>
+                                <ul>
+                                    <li><a href="elements.html">elements</a></li>
+                                    <li><a href="search.html">search</a></li>
+                                    <li><a href="single.html">single</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="ticker-btn" href="#">Signup</a></li>
+                            <li><a class="ticker-btn" href="#">Login</a></li>
+                        </ul>
+                    </nav><!-- #nav-menu-container -->
                 </div>
-            </li>
+            </div>
+        </header><!-- #header -->
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    SignUp
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <?php echo anchor("welcome/seekRegister","JobSeeker",['class'=>'dropdown-item']);?>                    
 
-                    <div class="dropdown-divider"></div>
-                    <?php echo anchor("welcome/emplRegister","Employer",['class'=>'dropdown-item']);?>                    
-                </div>
-            </li>
-            <?php } ?>
 
-            <?php if($this->session->userdata('Email')&& ($this->session->userdata('role_id')==2)){?>
-<li class="nav-item ">
-<?php echo anchor("welcome/Dashboard","Dashboard",['class'=>'nav-link active']);?>
-</li>
-<?php } elseif($this->session->userdata('Email') && ($this->session->userdata('role_id')==1)){?>
-<?php echo anchor("welcome/dashboard_seeker","Dashboard",['class'=>'nav-link active']);?>
-
-<?php }?>
-
-        </ul>
-    </div>
-</nav>
-<!-- login-form for jobseeker  -->
+        <!-- login-form for jobseeker  -->
 <div id="JobSeeker" class="modal fade">
     <div class="modal-dialog modal-login">
         <div class="modal-content">
@@ -70,7 +48,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Username/Email</label>
-                    <input type="text" class="form-control" required="required" name="Email">
+                    <input type="text" class="form-control" required="required" name="Email" autocomplete="email">
                 </div>
                 <div class="form-group">
                     <div class="clearfix">
@@ -78,7 +56,7 @@
                         <a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
                     </div>
 
-                    <input type="password" class="form-control" required="required" name="Password">
+                    <input type="password" class="form-control" required="required" name="Password"autocomplete="current-password">
                 </div>
             </div>
             <div class="modal-footer">
@@ -113,7 +91,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Username/Email</label>
-                    <input type="text" class="form-control" required="required" name="Email">
+                    <input type="text" class="form-control" required="required" name="Email" autocomplete="email">
                 </div>
                 <div class="form-group">
                     <div class="clearfix">
@@ -121,7 +99,7 @@
                         <a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
                     </div>
 
-                    <input type="password" class="form-control" required="required" name="Password">
+                    <input type="password" class="form-control" required="required" name="Password" autocomplete="current-password">
                 </div>
             </div>
             <div class="modal-footer">
@@ -134,10 +112,3 @@
 </div>
 
 <!-- login-form for employer ends here -->
-
-<!-- nav by abhishk/ -->
-
-<!-- test query -->
-
-<!-- test query -->
-<div class="row">
