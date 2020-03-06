@@ -2300,12 +2300,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .banner-area {
   
-  background: url(../img/header-bg.jpg) center;
+  background: url(../img/header-bg.gif) center;
   background-size: cover;
 }
 
 .banner-area .overlay-bg {
-  opacity: .95;
+  opacity: .85;
 }
 
 .banner-content {
