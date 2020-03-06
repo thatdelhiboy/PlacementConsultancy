@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 										<input type="text"class="typeahead form-control searchboxhome" id="jobtitle" name="search" placeholder="what are you looking for?">
 									</div>
 									<div class="col-lg-2 form-cols">
-									    <button type="button" class="btn btn-info">
+									    <button type="button" class="btn btn-info" onclick="searchfunc()">
 									      <span class="lnr lnr-magnifier"></span> Search
 									    </button>
 									</div>								
@@ -247,38 +247,11 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
 								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 								<a class="primary-btn" href="#">I am a Candidate</a>
-								<a class="primary-btn" href="#">Request Free Demo</a>
+								<a class="primary-btn" href="#">I am an Employer</a>
 							</div>
 						</div>
 					</div>	
 				</div>	
 			</section>
 			<!-- End calto-action Area -->
-<!-- <div class="s004" style="width: 100%;">
-  <form>
-    <fieldset>
-      <legend>FIND JOB WHICH YOU ARE LOOKING FOR?</legend>
-      <div class="inner-form">
-        <div class="input-field">
-          <div class="input-group" id="prefetch1">
-            <input class="typeahead form-control mx-sm-3 searchboxhome " id="jobtitle"
-              aria-describedby="inputGroup-sizing-default" name="jobtitle" type="text" placeholder="Type to search..."
-              style=" width: 55vw;">
-          </div>
-
-          <button class="btn-search form-control" type="submit" onclick="searchfunc()"
-            style="transform: translateX(-10px);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-              </path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-    </fieldset>
-  </form>
-</div> -->
-
 <!-- new homepage serch menu and button ends here -->

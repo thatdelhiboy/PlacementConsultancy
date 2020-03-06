@@ -1,3 +1,6 @@
+<section class="section-gap">
+				
+			</section>
 <aside class="filterarea" style="background-color:pink;padding:20px;margin:0px;height:100%">
 <h2>Filter <i class="fa fa-filter"></i></h2>
 <input type="checkbox" name="" id=""> <span>Job Type</span> <br>

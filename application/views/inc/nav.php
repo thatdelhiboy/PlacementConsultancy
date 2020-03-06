@@ -7,7 +7,7 @@
                     </div>
                     <nav id="nav-menu-container">
                         <ul class="nav-menu">
-                            <li class="menu-active"><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="category.html">Category</a></li>
                             <li><a href="price.html">Price</a></li>
@@ -22,6 +22,42 @@
                             </li>
                             <li><a class="ticker-btn" href="#">Signup</a></li>
                             <li><a class="ticker-btn" href="#">Login</a></li>
+                            <?php if(!$this->session->userdata('Username')){?>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        SignIn
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a href="#JobSeeker" class="trigger-btn dropdown-item" data-toggle="modal">JobSeeker</a>
+        <div class="dropdown-divider"></div>
+        <a href="#Employer" class="trigger-btn dropdown-item" data-toggle="modal">Employer</a>
+    </div>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        SignUp
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <?php echo anchor("welcome/seekRegister","JobSeeker",['class'=>'dropdown-item']);?>                    
+
+        <div class="dropdown-divider"></div>
+        <?php echo anchor("welcome/emplRegister","Employer",['class'=>'dropdown-item']);?>                    
+    </div>
+</li>
+<?php } ?>
+
+<?php if($this->session->userdata('Email')&& ($this->session->userdata('role_id')==2)){?>
+<li class="nav-item ">
+<?php echo anchor("welcome/Dashboard","Dashboard",['class'=>'nav-link active']);?>
+</li>
+<?php } elseif($this->session->userdata('Email') && ($this->session->userdata('role_id')==1)){?>
+<?php echo anchor("welcome/dashboard_seeker","Dashboard",['class'=>'nav-link active']);?>
+
+<?php }?>
                         </ul>
                     </nav><!-- #nav-menu-container -->
                 </div>
