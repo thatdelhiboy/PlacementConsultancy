@@ -24,8 +24,11 @@ class Jobpost extends MX_Controller{
 					 'Salary'=>$this->input->post('Salary'));
 					 
 					 $this->load->model('Queries');
-						if($this->Queries->postjob($data))
+					 $post=$this->Queries->postjob($data);
+					 
+						if($post)
 						{
+
 							$this->session->set_flashdata('message','Registered data successfully');
 							return redirect("welcome/postjob");
 						}

@@ -198,6 +198,22 @@ class Queries extends CI_Model{
 				return false;
 			}
 		}
+		public function applyjobs($id)
+		{
+			$this->db->select('employer.orgname,employer.Email,Posting_time,Title,Eligibility,job.City,Salary');
+			$this->db->from('job');
+			$this->db->join('employer','employer.Username=job.Username_fk');
+			$this->db->where('job.Job_id',$id);
+			$query=$this->db->get();
+		
+			if($query->num_rows() > 0)
+			{
+				return $query->row();
+			}
+			else{
+				return false;
+			}
+		}
 		public function deleteskill(){
 		$id = $this->input->get('Id');
 		$this->db->where('Id', $id);
@@ -231,6 +247,7 @@ class Queries extends CI_Model{
 			return false;
 		}
 		}
+
 		 public function fetch_data($query)
 		{
 			$this->db->like('Title',$query);

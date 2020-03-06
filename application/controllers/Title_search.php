@@ -33,15 +33,13 @@ class Title_search extends MX_Controller{
    {
 	   $date =new DateTime($row->Posting_time);
     $output .= '
-      <ul class="singlejob" style="list-style-type: none">
-       <li class="singlejobtitle">'.$row->Title.'</li>
-       <li class="singlejobcity">'.$row->City.'</li>
-       <li class="singlejobelegiblity">'.$row->Eligibility.'</li>
-       <li class="singlejobposteddate">'.$date->format('Y-m-d').'</li>
-       <button id=\'apply\' class="btn btn-success ml-3 mb-3" >Apply</button>
-       <button class="btn btn-warning ml-3 mb-3">View</button>
+      <ul style="list-style-type: none">
+       <li>'.$row->Title.'</li>
+       <li>'.$row->City.'</li>
+       <li>'.$row->Eligibility.'</li>
+       <li>'.$date->format('Y-m-d').'</li>
+	     <li><a href="javascript:;" class="btn btn-info my-3 apply" data="'.$row->Job_id.'">Apply</a></li>
       </ul> 
-      <hr>
     ';
    }
   }
