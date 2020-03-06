@@ -73,7 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-position-x: center;
-  //overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .modal-login {
@@ -140,33 +140,6 @@ body {
 
 
 /* homepage */
-.row .searchbar{
-  display: flex;
-}
-
-.row #jobtitle{
-  margin-right: 1%;
-  margin-left: 10%;
-}
-.row #joblocation{
-  margin-left: 1%;
-  margin-right: 10%;
-}
-
-.row .searchbar input[type=text]{
-  width: 30rem;
-  height: 50px;
-}
-
-.row button.btn-lg.btn-success{
-  display: block;
-  margin: 0 auto;
-}
-.row .searchboxhome{
-  margin: 30%  auto 1%;
-  width: 35%;
-  
-}
 
 /* dashboard */
 .row{

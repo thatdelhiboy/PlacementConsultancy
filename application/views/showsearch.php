@@ -15,6 +15,5 @@
 var data = localStorage.getItem('myItem');
 if(data !== undefined){
 	$('#showdata').html(data);
-	alert(html(data).getElementByID(apply));
 }
 </script>
