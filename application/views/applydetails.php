@@ -11,6 +11,24 @@
 	var data = localStorage.getItem('myItems');
 if(data !== undefined){
 	$('#showdata').html(data);
+	$(document).on('click','.apply',function(){
+var id=$(this).attr('data');
+$.ajax({
+	type: 'ajax',
+	method: 'post',
+	async: false,
+	url: '<?php echo base_url() ?>index.php/Applydetails/apply',
+	data:{Job_id:id},
+	success: function(data){
+		
+			localStorage.setItem('myItems',data);
+			window.location.href = '<?php echo base_url()?>Applydetails/find';
+	},
+	error: function(){
+		alert('Error');
+	}
+});
+});
 	/*$('input[name=org]').html(data.orgname);
 	$('input[name=city]').val(data.City);
 	$('input[name=email]').val(data.Email);

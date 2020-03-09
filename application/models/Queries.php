@@ -237,6 +237,17 @@ class Queries extends CI_Model{
 			return false;
 		}
 		}
+		public function apply($id,$mob){
+			$data=[
+				'Like_Id'=>$mob,
+				'Status'=>1,
+				'Job_id'=>$id
+			];
+
+			return $this->db->insert('opted',$data);
+			
+			
+		}
 		public function edit($id){
 			
 		$this->db->where('Id', $id);
