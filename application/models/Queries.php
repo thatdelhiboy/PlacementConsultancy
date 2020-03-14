@@ -64,9 +64,17 @@ class Queries extends CI_Model{
 		return $this->db->delete('job',['Job_id'=>$id]);
 	}
 	public function getqual($pro){
-		$query=$this->db->select('*')->where(['user_fk'=>$pro])->get('qualification');
+		$this->db->select('*');
+		$this->db->from('qualification');
+		$this->db->join('seeker','qualification.user_fk=seeker.Mobile');
+		$this->db->where(['qualification.user_fk'=>$pro]);
+		$query=$this->db->get();
 		if($query->num_rows()>0)
 		{
+			/*echo '<pre>';
+			print_r($query->row());
+			echo '</pre>';
+			exit();*/
 			return $query->result();
 		}
 		else

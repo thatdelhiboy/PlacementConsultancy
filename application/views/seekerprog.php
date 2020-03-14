@@ -3,23 +3,67 @@
 
 		<tr>
 			<th colspan="2">
-				<h4 class="text-center">Your Details</h4>
+				<h6 class="text-center">Personal Details</h6>
 			</th>
 		</tr>
-
 		<tr>
-			<td>Mobile</td>
-			<td><?php echo $this->session->userdata['Mobile'];?></td>
+			<td>First Name</td>
+			<td><?php echo htmlentities($pro[0]->First_Name);?></td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td><?php echo htmlentities($pro[0]->Last_Name);?></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td><?php echo htmlentities($pro[0]->Gender);?></td>
 		</tr>
 		<tr>
 			<td>Email</td>
-			<td><?php echo $this->session->userdata['Email'];?></td>
+			<td><?php echo htmlentities($pro[0]->Email);?></td>
+		</tr>
+		
+		
+		<tr>
+			<td>Date of Birth</td>
+			<td><?php echo htmlentities($pro[0]->dob);?></td>
+		</tr>
+		<tr>
+			<td>Mobile</td>
+			<td><?php echo htmlentities($pro[0]->Mobile);?></td>
+		</tr>
+
+		<!--<tr>
+			<td><?php echo anchor('','','');?></td>
+		</tr>-->
+	</table>
+	<br><br>
+	<table class="table table-responsive-md table-bordered table-sm table-striped">
+
+		<tr>
+			<th colspan="2">
+				<h6 class="text-center">Location</h6>
+			</th>
+		</tr>
+		
+		<tr>
+			<td>City</td>
+			<td><?php echo htmlentities($pro[0]->City);?></td>
+		</tr>
+		<tr>
+			<td>State/Province</td>
+			<td><?php echo htmlentities($pro[0]->State);?></td>
+		</tr>
+		<tr>
+			<td>Country</td>
+			<td><?php echo htmlentities($pro[0]->Country);?></td>
 		</tr>
 
 
-	</table>
 
-<h2>Qualification</h2>
+	</table>
+<br><br>
+<h5>Academics Qualification</h5>
 	<table class="table table-responsive-md table-bordered table-sm table-striped">
 		<thead>
 			<tr>

@@ -18,6 +18,7 @@
 	<th>Created by</th>
 	<th>Requirements</th>
 	<th>Salary</th>
+	<th>Skill</th>
 	<th>Job location</th>
 	</tr>
 	</thead>
@@ -30,6 +31,7 @@
 	<td class="px-2"><?php $date =new DateTime($row->Posting_time); echo htmlentities($date->format('Y-m-d'));?></td>
 	<td class="px-2"><?php echo htmlentities($row->Eligibility);?></td>
 	<td class="px-2"><?php echo htmlentities($row->Salary);?></td>
+	<td class="px-2"><?php echo htmlentities($row->Skills);?></td>
 	<td class="px-2"><?php echo htmlentities($row->City);?></td>
 	</tr>
 			<?php } }} ?>

@@ -5,7 +5,7 @@ class Opted_job extends MX_Controller{
 		$result=$this->Queries->likedjob($this->session->userdata['Mobile']);
 		$this->load->view('inc/header');
 		$this->load->view('inc/nav');
-		$this->load->view('user_Profile2');
+		$this->load->view('user_profile2');
 		$this->load->view('likedjobs',['job'=>$result]);
 		$this->load->view('inc/footer');
 	}

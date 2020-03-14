@@ -6,6 +6,7 @@
 	<th>Created by</th>
 	<th>Requirements</th>
 	<th>Salary</th>
+	<th>Skill</th>
 	<th>Job location</th>
 	<th>Set Status</th>
 	</tr>
@@ -18,6 +19,7 @@
 	<td class="px-2"><?php $date =new DateTime($row->Posting_time); echo htmlentities($date->format('Y-m-d'));?></td>
 	<td class="px-2"><?php echo htmlentities($row->Eligibility);?></td>
 	<td class="px-2"><?php echo htmlentities($row->Salary);?></td>
+	<td class="px-2"><?php echo htmlentities($row->Skills);?></td>
 	<td class="px-2"><?php echo htmlentities($row->City);?></td>
 	<td class="px-2"><i class="fab fa-pinterest-p"></i><?php echo anchor("Viewjob_seeker/selectjob/{$row->Job_id}","Apply",['class'=>'btn btn-success px-2']);?><?php 
 	// $success_msg = $this->session->flashdata('');

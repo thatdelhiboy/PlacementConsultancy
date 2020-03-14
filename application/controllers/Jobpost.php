@@ -6,6 +6,7 @@ class Jobpost extends MX_Controller{
 				//$this->form_validation->set_rules('Last_Name', 'Last Name');
 				$this->form_validation->set_rules('Eligibility', 'Job Description', 'required|max_length[20000]');
 				$this->form_validation->set_rules('City', 'City', 'required');
+				$this->form_validation->set_rules('Skills', 'Skills', 'required');
 				$this->form_validation->set_rules('Salary', 'Salary', 'required');
 				 $this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 				 if($this->form_validation->run()==False)
@@ -20,9 +21,13 @@ class Jobpost extends MX_Controller{
 					 'Username_fk'=>$this->session->userdata('Username'),
 					 'Title'=>$this->input->post('Title'),
 					 'City'=>$this->input->post('City'),
+					 'Skills'=>$this->input->post('Skills'),
 					 'Eligibility'=>$this->input->post('Eligibility'),
 					 'Salary'=>$this->input->post('Salary'));
-					 
+					 echo "<pre>";
+					 print_r($data);
+					 echo '</pre>';
+					 exit();
 					 $this->load->model('Queries');
 					 $post=$this->Queries->postjob($data);
 					 
