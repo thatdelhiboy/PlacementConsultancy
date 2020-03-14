@@ -32,10 +32,12 @@
 			<td>Mobile</td>
 			<td><?php echo htmlentities($pro[0]->Mobile);?></td>
 		</tr>
+		<tr>
+					<td><?php echo anchor("Editemployer/basic/{$pro[0]->Mobile}","Edit",['class'=>'fas fa-edit']);?></td>
+					
+				</tr>
 
-		<!--<tr>
-			<td><?php echo anchor('','','');?></td>
-		</tr>-->
+		
 	</table>
 	<br><br>
 	<table class="table table-responsive-md table-bordered table-sm table-striped">
@@ -58,7 +60,10 @@
 			<td>Country</td>
 			<td><?php echo htmlentities($pro[0]->Country);?></td>
 		</tr>
-
+		<tr>
+					<td><?php echo anchor("Editemployer/basic/{$pro[0]->Username}","Edit",['class'=>'fas fa-edit']);?></td>
+					
+				</tr>
 
 
 	</table>
@@ -89,7 +94,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<br><hr style="border: 2px solid light";">
+	<br><hr style="border: 2px solid light;">
 	<h3>Skills</h3>
 	<div class="py-4 pl-3 text-light" id="showdata" style="height: 200px; overflow:auto;background: teal">
 			</div>
