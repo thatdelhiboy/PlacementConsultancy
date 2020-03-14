@@ -95,14 +95,49 @@
 					<td class="text-center text-secondary"><?php echo htmlentities($result->First_Name);?></td>
 				</tr>
 				<tr>
-					<td class="text-center text-secondary">Last name</td>
+					<td class="text-center text-secondary">Last Name</td>
 					<td class="text-center text-secondary"><?php echo htmlentities($result->Last_Name);?></td>
+				</tr>
+			</table>
+			<table class="table table-bordered table-sm table-striped ">
+				<tr>
+					<th>
+						<h4>Location</h4>
+					</th>
 				</tr>
 				<tr>
 					<td class="text-center text-secondary">City</td>
 					<td class="text-center text-secondary"><?php echo ($result->City);?></td>
 				</tr>
+				<tr>
+					<td class="text-center text-secondary">State</td>
+					<td class="text-center text-secondary"><?php echo ($result->State);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">Country</td>
+					<td class="text-center text-secondary"><?php echo ($result->Country);?></td>
+				</tr>
+			</table>
+			<table class="table table-bordered table-sm table-striped ">
+				<tr>
+					<th>
+						<h4>Other details</h4>
+					</th>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">Founded</td>
+					<td class="text-center text-secondary"><?php echo ($result->Founded);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">About</td>
+					<td class="text-center text-secondary"><?php echo ($result->About);?></td>
+				</tr>
+				<tr>
+					<td class="text-center text-secondary">Website</td>
+					<td class="text-center text-secondary"><?php echo ($result->Website);?></td>
+				</tr>
 				
+			
 				<tr> <td class="text-center text-secondary">Skills</td>
 				<td class="text-center"><button type="button" class="btn btn-primary addbtn px-3" data-toggle="modal" data-target="#exampleModal">
   Add

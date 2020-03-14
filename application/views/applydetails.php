@@ -22,7 +22,7 @@ $.ajax({
 	success: function(data){
 		
 			localStorage.setItem('myItems',data);
-			window.location.href = '<?php echo base_url()?>Applydetails/find';
+		
 	},
 	error: function(){
 		alert('Error');

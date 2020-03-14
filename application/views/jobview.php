@@ -11,6 +11,7 @@
 					<th>City</th>
 					<th>Created By</th>
 					<th>Salary</th>
+					<th>Skill</th>
 					<th>Settings</th>
 				</tr>
 				</thead>
@@ -26,6 +27,7 @@ foreach ($result as $row){
 		<td><?php echo htmlentities($row->City);?></td>
 		<td><?php $date =new DateTime($row->Posting_time); echo htmlentities($date->format('Y-m-d'));?></td>
 		<td><?php echo htmlentities($row->Salary);?></td>
+		<td><?php echo htmlentities($row->Skills);?></td>
 		<td>
 		<?php echo anchor("Welcome/deleteJob/{$row->Job_id}","Delete",['class'=>'fas fa-trash-alt']);?><br>
 		<?php echo anchor("Welcome/editjob/{$row->Job_id}",'<i class="fas fa-edit"><span class="hidden-tablet">Edit</span></i>');?>

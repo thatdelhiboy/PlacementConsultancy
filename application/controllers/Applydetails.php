@@ -35,7 +35,7 @@ class Applydetails extends MX_Controller{
 		$mob = $this->session->userdata('Mobile');
 		$this->load->model('Queries');
 		$result=$this->Queries->apply($id,$mob);
-		if(result>0)
+		if($result>0)
 		{
 			return redirect('Welcome/dashboard');
 		}

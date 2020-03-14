@@ -3,7 +3,7 @@
 		foreach($result as $row){?>
 <ol>
 <li>Job Title:-<?php echo htmlentities($row->Title);?></li>
-<li>Skill:-<?php echo htmlentities($row->Eligibility);?></li>
+<li>Description:-<?php echo htmlentities($row->Eligibility);?></li>
 <li>sal:-<?php echo htmlentities($row->Salary);?></li>
 <li>candidate:- 
 <ul style="list-style-type: none">
