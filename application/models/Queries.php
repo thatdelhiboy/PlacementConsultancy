@@ -88,7 +88,7 @@ class Queries extends CI_Model{
 			$this->db->from('job');
 			$this->db->join('Opted','opted.Job_id=job.Job_id','inner');
 			$query=$this->db->get();*/
-			$query=$this->db->select('Title,Posting_time,Eligibility,Salary,City,Job_id')->get('job');
+			$query=$this->db->select('Title,Posting_time,Skills,Eligibility,Salary,City,Job_id')->get('job');
 			return $query->result();
 		}
 		public function likejob($data){
@@ -96,7 +96,7 @@ class Queries extends CI_Model{
 			return $this->db->insert('opted',$data);
 		}
 		public function likedjob($id){
-			$this->db->select('job.Posting_time,job.Title,job.City,job.Eligibility,job.Salary,opted.Status');
+			$this->db->select('job.Posting_time,job.Skills,job.Title,job.City,job.Eligibility,job.Salary,opted.Status');
 			$this->db->from('job');
 			$this->db->join('opted','opted.Job_id=job.Job_id','inner');
 			$this->db->where('opted.Like_id',$id);

@@ -98,6 +98,10 @@
 					<td class="text-center text-secondary">Last Name</td>
 					<td class="text-center text-secondary"><?php echo htmlentities($result->Last_Name);?></td>
 				</tr>
+				<tr>
+					<td><?php echo anchor("Editemployer/basic/{$result->Username}","Edit",['class'=>'fas fa-edit']);?></td>
+					
+				</tr>
 			</table>
 			<table class="table table-bordered table-sm table-striped ">
 				<tr>
@@ -117,6 +121,10 @@
 					<td class="text-center text-secondary">Country</td>
 					<td class="text-center text-secondary"><?php echo ($result->Country);?></td>
 				</tr>
+				<tr>
+					<td><?php echo anchor("Editemployer/location/{$result->Username}","Edit",['class'=>'fas fa-edit']);?></td>
+					
+				</tr>
 			</table>
 			<table class="table table-bordered table-sm table-striped ">
 				<tr>
@@ -135,6 +143,10 @@
 				<tr>
 					<td class="text-center text-secondary">Website</td>
 					<td class="text-center text-secondary"><?php echo ($result->Website);?></td>
+				</tr>
+				<tr>
+					<td><?php echo anchor("Editemployer/Otherdetails/{$result->Username}","Edit",['class'=>'fas fa-edit']);?></td>
+					
 				</tr>
 				
 			
